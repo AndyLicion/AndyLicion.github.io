@@ -1,0 +1,1884 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Andy">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="郑重声明： 注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取  链接：https:&#x2F;&#x2F;www.acwing.com 来源：AcWing 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。  基础算法 一、基础部分 1.快速排序 ​ 描述：  第一步：  2.归并排序 ​ 描述：    归并排序步骤  第一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acwing_基础算法">
+<meta property="og:url" content="https://example.com/2023/07/23/acwing_%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Andyのblog">
+<meta property="og:description" content="郑重声明： 注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取  链接：https:&#x2F;&#x2F;www.acwing.com 来源：AcWing 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。  基础算法 一、基础部分 1.快速排序 ​ 描述：  第一步：  2.归并排序 ​ 描述：    归并排序步骤  第一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://example.com/img/bg/mygirl.jpg">
+<meta property="article:published_time" content="2023-07-23T14:02:00.000Z">
+<meta property="article:modified_time" content="2023-12-15T11:31:19.980Z">
+<meta property="article:author" content="Andy">
+<meta property="article:tag" content="acwing">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://example.com/img/bg/mygirl.jpg">
+  
+  
+  
+  <title>acwing_基础算法 - Andyのblog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Andyのblog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/mygirl.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="acwing_基础算法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-23 22:02" pubdate>
+          2023年7月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          131 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">acwing_基础算法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>郑重声明：</p>
+<p>注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取</p>
+<ul>
+<li>链接：https://www.acwing.com</li>
+<li>来源：AcWing</li>
+<li>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</li>
+</ul>
+<h1 id="基础算法">基础算法</h1>
+<h2 id="一基础部分">一、基础部分</h2>
+<h3 id="快速排序">1.快速排序</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="归并排序">2.归并排序</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/归并排序步骤.png" srcset="/img/loading.gif" lazyload
+alt="归并排序步骤" />
+<figcaption aria-hidden="true">归并排序步骤</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+<p>确定分界点</p>
+<p><strong>第二步：</strong></p>
+<p>递归排序左边和右边</p>
+<p><strong>第三步：</strong></p>
+<p>合并那个排序好（从小到大 或 从大到小）的两个序列</p>
+<p><strong>求逆序对的数量：</strong><code>AcWing.788</code></p>
+<figure>
+<img
+src="/img/learning/acwing/basic_algorithm/归并排序求逆序对的数量.png" srcset="/img/loading.gif" lazyload
+alt="归并排序求逆序对的数量png" />
+<figcaption aria-hidden="true">归并排序求逆序对的数量png</figcaption>
+</figure>
+</blockquote>
+<h3 id="二分">3.二分</h3>
+<p>​
+<strong>描述：</strong>整数二分：有单调性的一定可以二分，没有单调性的也有可以二分的可能。二分的本质并非单调性，而是是边界问题。<strong>二分是一种思想，二分查找是二分思想的一个应用</strong></p>
+<blockquote>
+<p>下图中左右两个边界位置即为二分所要找寻的位置</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/整数二分步骤.png" srcset="/img/loading.gif" lazyload
+alt="整数二分步骤" />
+<figcaption aria-hidden="true">整数二分步骤</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+<p>确定所求为左边界点还是右边界点，采用不同的二分方法</p>
+</blockquote>
+<h3 id="高精度算法">4.高精度算法</h3>
+<h4 id="加法">加法</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h4 id="减法">减法</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h4 id="乘法">乘法</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h4 id="除法">除法</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="前缀和差分">5.前缀和差分</h3>
+<h4 id="前缀">前缀</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>能够提前准备前<code>i</code>个数的和，再次计算<code>l,r</code>之间的和时可以在O(1)的时间内完成计算</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/前缀和.png" srcset="/img/loading.gif" lazyload
+alt="前缀和" />
+<figcaption aria-hidden="true">前缀和</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h4 id="差分">差分</h4>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>-|可以用来快速处理区间内的操作，比如在原来数组a的l,r区间都加上c或者减去c|-</p>
+<p>给定一个a数组，构造一个b数组，使得a数组是b数组的前缀和,</p>
+<p><span class="math inline">\(b_1 = a_1\)</span></p>
+<p><span class="math inline">\(b_2 = a_2 - a_1\)</span></p>
+<p><span class="math inline">\(b_3 = a_3 - a_2\)</span></p>
+<p>​ .</p>
+<p>​ .</p>
+<p>​ .</p>
+<p><span class="math inline">\(b_n = a_n - a_{n - 1}\)</span></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/差分.png" srcset="/img/loading.gif" lazyload alt="差分" />
+<figcaption aria-hidden="true">差分</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="双指针算法">6.双指针算法</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>-| 主要是处理两重for循环 |-</p>
+<p>首选 在不考虑时间复杂度的情况下写出多个for循环的处理方法</p>
+<p>然后 再去考虑优化内部的for循环，降低时间复杂度</p>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="位运算">7.位运算</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>可以使用向右移运算操作符<code>&gt;&gt;</code>处理相关问题</p>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="离散化">8.离散化</h3>
+<p>​
+<strong>描述：</strong>将需要处理的点离散到一个较小的区间内完成对大区间分散数据的集中化处理</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="区间合并">9.区间合并</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>将所有出现的左右区间进行左端点从小到大的顺序进行排序，依次遍历所有区间，如果前后两区间有交集做相应的操作（更新右边界
+| 不更新右边界）</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/区间合并.png" srcset="/img/loading.gif" lazyload
+alt="区间合并" />
+<figcaption aria-hidden="true">区间合并</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<hr />
+<h2 id="二数据结构">二、数据结构</h2>
+<h3 id="单链表">1.单链表</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="双链表">2.双链表</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="栈">3.栈</h3>
+<p>​
+<strong>描述：</strong>可以用数组模拟栈，当前下标<code>tt</code>是栈顶下标，实际只需要调整<code>tt</code>即可实现栈的所有操作</p>
+<blockquote>
+<p>模拟栈实现方式</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/模拟栈代码.png" srcset="/img/loading.gif" lazyload
+alt="模拟栈代码" />
+<figcaption aria-hidden="true">模拟栈代码</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="队列">4.队列</h3>
+<p>​
+<strong>描述：</strong>可以用数组模拟队列，<code>hh</code>是对头下标<code>tt</code>是队尾下标，实际只需要调整<code>hh</code>和<code>tt</code>即可实现队列的所有操作</p>
+<blockquote>
+<p>模拟数组实现方式</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/模拟队列代码.png" srcset="/img/loading.gif" lazyload
+alt="模拟队列代码" />
+<figcaption aria-hidden="true">模拟队列代码</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="单调栈">5.单调栈</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>最常见的情况：给定一个序列，求一下每一个数左边（右边）离他最近的且比它小（大）的数在什么地方</p>
+<p>例子：</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">一个序列：</th>
+<th>3</th>
+<th>4</th>
+<th>2</th>
+<th>7</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">左边离他最小数：</td>
+<td>-1</td>
+<td>3</td>
+<td>-1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一步：</strong></p>
+<p>先两重循环</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 先考虑暴力做法</span><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i  ++)<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i; j &gt;= <span class="hljs-number">0</span>; j -- )<br>	<span class="hljs-keyword">if</span>(ai &gt; aj)<br> &#123;<br>      cout &lt;&lt; aj &lt;&lt; endl;<br>      <span class="hljs-keyword">break</span>;<br> &#125;<br></code></pre></td></tr></table></figure>
+<p>栈相当于存储了ai前面所有的值，从栈里面一个一个的寻找看是否能够找到第一个比ai小的数为止</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/单调栈.png" srcset="/img/loading.gif" lazyload
+alt="单调栈" />
+<figcaption aria-hidden="true">单调栈</figcaption>
+</figure>
+<p>优化：根据所求条件的单调性如果栈里面存在一个点ak比al小或者相等而且ak在al的右边（也就是说离ai更近且比ai小）把al弹出把ak压入</p>
+</blockquote>
+<h3 id="单调队列----不熟练">6.单调队列 -- 不熟练</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>最常见可以通过朴素的队列存储当前窗口的值，然后再通过优化队列中维护的值提高算法效率</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/单调队列.png" srcset="/img/loading.gif" lazyload
+alt="单调队列" />
+<figcaption aria-hidden="true">单调队列</figcaption>
+</figure>
+<p>维护一个队列，队列中不存在前面一个数比后面的数大的情况（将需要维护的队列中不需要的数删除），使队列具有单调性，用O(1)时间内取出需要找到的值</p>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="kmp----不熟练">7.KMP -- 不熟练</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>KMP图解，其实是需要找到模式串P中从第1个字符开始到以i结尾的字符结束这段字符中前缀字符串和后缀字符串相同的最长，计入next[i]中以便后续继续做处理</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/KMP图解.png" srcset="/img/loading.gif" lazyload
+alt="KMP图解" />
+<figcaption aria-hidden="true">KMP图解</figcaption>
+</figure>
+<p>1.暴力算法怎么做</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/KMP朴素做法.png" srcset="/img/loading.gif" lazyload
+alt="KMP朴素做法" />
+<figcaption aria-hidden="true">KMP朴素做法</figcaption>
+</figure>
+<p>2.如何去优化</p>
+<p>需要先预处理出相关的a[i]的最长前后缀匹配长度</p>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="trie">8.Trie</h3>
+<p>​ <strong>描述：</strong>高效地存储和查找字符串集合地数据结构</p>
+<blockquote>
+<p>例子：求字符串出现次数</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/Trie举例.png" srcset="/img/loading.gif" lazyload
+alt="Trie举例" />
+<figcaption aria-hidden="true">Trie举例</figcaption>
+</figure>
+<p>例子：求最大异或值模拟<img
+src="/img/learning/acwing/basic_algorithm/Trie求最大异或值模拟.png" srcset="/img/loading.gif" lazyload
+alt="Trie求最大异或值模拟" /></p>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="并查集----不熟练">9.并查集 -- 不熟练</h3>
+<p>​ <strong>描述：</strong>并查集可以维护一个关系</p>
+<blockquote>
+<p>并查集能够在近乎O(1)的时间完成的操作</p>
+<p>1.将两个集合合并</p>
+<p>2.询问两个元素是否在一个集合当中</p>
+<p><strong>基本原理：</strong>每个集合用一颗树来表示。树根的编号就是整个集合的编号。每个节点存储的是它的父节点，p[x]表示x的父节点</p>
+<p><strong>问题一：</strong>如何判断树根：if(p[x] == x)</p>
+<p><strong>问题二：</strong>如何求x的集合编号：while(p[x] != x) x = p[x]
+|
+<code>实际上每次查询根节点的时间复杂度挺高的，需要路径压缩优化（实际就是把每个节点都指向根节点）</code></p>
+<p><strong>问题三：</strong>如何合并两个集合：px是x的集合编号，py是y的集合编号。p[x]
+= y</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/并查集树形结构.png" srcset="/img/loading.gif" lazyload
+alt="并查集树形结构" />
+<figcaption aria-hidden="true">并查集树形结构</figcaption>
+</figure>
+<p>例子：acwing 240.食物链</p>
+<p>根据每个点跟根节点之间的关系，可以判断这两点之间的关系</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/240.食物链图解.png" srcset="/img/loading.gif" lazyload
+alt="240.食物链图解" />
+<figcaption aria-hidden="true">240.食物链图解</figcaption>
+</figure>
+<p><strong>第一步：</strong></p>
+</blockquote>
+<h3 id="堆">10.堆</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>基本的三个操作：一维数组下标从1开始比较好实现！</p>
+<p>1.插入一个数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">heap[ ++ size] = x<br></code></pre></td></tr></table></figure>
+<p>2.求集合当中的最小值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">heap[<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+<p>3.删除最小值</p>
+<p>将堆的最后一个数放到堆头的部分，主要是堆使用一维数组来实现的删除最后一个数比删除堆头元素的实现简单
+size --；</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs abnf">heap[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> heap[size]<span class="hljs-comment">;</span><br>size -- <span class="hljs-comment">;</span><br>down(<span class="hljs-number">1</span>)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+<p><font color='red'>4.删除任意一个元素</font></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++">heap[k] = heap[size];<br>size -- ;<br><span class="hljs-built_in">down</span>(k);<br><span class="hljs-built_in">up</span>(k);<br></code></pre></td></tr></table></figure>
+<p><font color='red'>5.修改任意一个元素</font></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++">heap[k] = x;<br><span class="hljs-built_in">down</span>(k);<br><span class="hljs-built_in">up</span>(k);<br></code></pre></td></tr></table></figure>
+<p><strong>小根堆：</strong>每个节点都比他的左右节点小</p>
+<p><strong>大根堆：</strong>每个节点都比他的左右节点大s</p>
+<p>使用一个一维数组来存堆，根节点为1，节点x的左儿子为2x，节点x的右儿子为2x+1。down操作是如果一个值变大了就将这个值向下降，up操作是如果一个值小了就将这个值向上升</p>
+<figure>
+<img src="D:\学习\基础算法\堆操作图解.png" srcset="/img/loading.gif" lazyload alt="堆操作图解" />
+<figcaption aria-hidden="true">堆操作图解</figcaption>
+</figure>
+</blockquote>
+<h3 id="哈希表">11.哈希表</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>作用：</strong></p>
+<p>​ 将一个较大范围的数映射到一个较小的范围内进行操作</p>
+<p><strong>存储结构（按数据映射冲突处理方式来分）：</strong></p>
+<p>​ <font color='red'>注意：mod x 的 x
+最好去一个质数，而且最好是距离2的整数次幂最远的质数</font></p>
+<ul>
+<li><strong>开放寻址法：</strong>开一个一维数组来存储映射到的位置，每次映射都返回未被使用的空位下标，如果已被使用就<code>++</code>继续寻找直到找到空位位置</li>
+</ul>
+<p>​ <code>经验来说，一维数组大小休要开到题目范围的2~3倍</code></p>
+<ul>
+<li><strong>拉链法：</strong>开一个一维数组来存储映射到的位置，每次映射都向该映射位置增加一个节点</li>
+</ul>
+<p>​ <code>注意:在c++中，负数求模为负数</code></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/哈希表-拉链法.png" srcset="/img/loading.gif" lazyload
+alt="哈希表-拉链法" />
+<figcaption aria-hidden="true">哈希表-拉链法</figcaption>
+</figure>
+<p><strong>字符串哈希方式：</strong></p>
+<p>将一个字符串映射成P进制的数</p>
+<p><font color='red'>注意：不能映射为0</font></p>
+<p><font color='red'>当前<span
+class="math inline">\(Ｐ＝131\)</span>或者<span
+class="math inline">\(P=13331\)</span>时候<span
+class="math inline">\(Q=2^{64}\)</span>的时候有<span
+class="math inline">\(99.99\%\)</span>的情况不会发生冲突 | 同时如果使用
+unsigned long long 来存储的话溢出就是相当于mod的效果了</font></p>
+<p>例子：acwing 841.字符串哈希</p>
+</blockquote>
+<hr />
+<h2 id="三搜索与图论">三、搜索与图论</h2>
+<h3 id="深度优先遍历dfs">1.深度优先遍历DFS</h3>
+<p>==算法框图==</p>
+<h3 id="图的最短路径算法">2.图的最短路径算法</h3>
+<p>==算法框图==</p>
+<p><img
+src="/img/learning/acwing/basic_algorithm/图的最短路径算法.png" srcset="/img/loading.gif" lazyload /></p>
+<p>​</p>
+<h4 id="单源最短路径算法">单源最短路径算法</h4>
+<h5
+id="基础的dijkstra算法所有边权都是正数">1.基础的Dijkstra算法（<u>所有边权都是正数</u>）</h5>
+<p>​ <strong>描述：</strong>
+一般的戴克斯特拉算法是最为朴素的做法，即求一个源点到任意一点的最短路径，每一个结点存取的是当前点到源点的待定最小距离初始时是无穷大，在一步一步的迭代过程中更新并确定该最小距离以至完成对除源点以外所有点到源点的最小距离的求解</p>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p><u>初始化所有点的距离</u></p>
+<p>1、起点距离确定 <code>dist[1] = 0, dist[others] = +∞</code></p>
+<figure>
+<img src="D:\学习\基础算法\代码34827.png" srcset="/img/loading.gif" lazyload alt="代码34827" />
+<figcaption aria-hidden="true">代码34827</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<p><strong>第二步：</strong></p>
+<p><u>找一个最小值，找到当前没有确定最短路径长度的点当中距离最小值的那一个</u></p>
+<p>1、先给定一个 <code>Si</code> 当前已确定最短距离的点</p>
+<p>2、<code>for i</code> 从 <code>0 ~ n</code> 循环<code>n</code>遍 不在
+<code>Si</code> 中的距离最近的点赋值给 t ： t &lt;- not in Si and
+min(dist)</p>
+<ul>
+<li><p>也就是进行n次迭代去确定每个点到起点的最小值，所以说最后需要找寻的终点的最短距离就是dist[n]</p>
+<figure>
+<img src="D:\学习\基础算法\代码483.png" srcset="/img/loading.gif" lazyload alt="代码483" />
+<figcaption aria-hidden="true">代码483</figcaption>
+</figure></li>
+<li><p>每次迭代过程中我们都先找到当前未确定的最短距离的点中距离最短的点（该点就是最短距离
+—— 搜证明）</p></li>
+</ul>
+<p>3、把 <code>t</code> 加到 <code>S</code> 中</p>
+<ul>
+<li>标记当前最短路径点被查询过</li>
+</ul>
+<p>4、用 <code>t</code> 更新其他点的距离</p>
+<ul>
+<li><p>每一个点到起点的最短距离通过当前加入的点进行更新，同时不需要考虑之前已经加入点（因为之前加入的点已经是最小值了）</p>
+<figure>
+<img src="D:\学习\基础算法\代码4332.png" srcset="/img/loading.gif" lazyload alt="代码4332" />
+<figcaption aria-hidden="true">代码4332</figcaption>
+</figure></li>
+</ul>
+</blockquote>
+<h5
+id="堆优化后的dijkstra算法所有边权都是正数">2.堆优化后的Dijkstra算法（<u>所有边权都是正数</u>）</h5>
+<p>​ <strong>描述：</strong>
+堆优化后的戴克斯特拉算法是在基础算法上面完成了对
+找寻未确定的最短路径长度的点中找到最短的点
+的优化从而算法时间复杂度降低，引入优选队列（小根堆）完成对最小路径长度点在
+<code>O(1)</code> 时间复杂度内取出，插入队列中</p>
+<p>==算法步骤==</p>
+<blockquote>
+<h5 id="第一步">第一步：</h5>
+<p><u>初始化所有点的距离</u></p>
+<p>1、起点距离确定 <code>dist[1] = 0, dist[others] = +∞</code></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码34827.png" srcset="/img/loading.gif" lazyload
+alt="代码34827" />
+<figcaption aria-hidden="true">代码34827</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<h5 id="第二步">第二步：</h5>
+<p>1、源点已经确定，将源点的压入堆<code>heap.push(&#123;0, 1&#125;); first</code>为结点到源点的距离
+<code>second</code>为结点编号</p>
+<p>2、遍历除源点以外的所有点，更新并确定当前点的最短路径</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码4583.png" srcset="/img/loading.gif" lazyload
+alt="代码4583" />
+<figcaption aria-hidden="true">代码4583</figcaption>
+</figure>
+</blockquote>
+<h5
+id="贝尔曼-福特算法bellman-ford-存在负权边">3.贝尔曼-福特算法（Bellman-Ford
+<u>存在负权边</u>）</h5>
+<p>​ <strong>描述：</strong>
+贝尔曼福特算法是通过遍历所有的边更新最短路径</p>
+<blockquote>
+<h5 id="第一步-1">第一步：</h5>
+<p><u>初始化所有点到源点的距离</u></p>
+<p>执行<code>n</code>次，<code>for n</code>次</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/笔记397.png" srcset="/img/loading.gif" lazyload
+alt="笔记397" />
+<figcaption aria-hidden="true">笔记397</figcaption>
+</figure>
+<p>上图k次 从1号点经过不超过k条边到每号点的最短距离</p>
+</blockquote>
+<blockquote>
+<h5 id="第二步-1">第二步:</h5>
+<p>遍历所有边<code>a b w</code>，更新当前点到源点的最短路径距离</p>
+</blockquote>
+<h5
+id="贝尔曼-福特算法队列优化算法-最短路径快速算法spfashortest-path-faster-algorithm-存在负权边">4.贝尔曼-福特算法队列优化算法
+| 最短路径快速算法（SPFA（Shortest Path Faster Algorithm）
+<u>存在负权边</u>）</h5>
+<p>​ <strong>描述：</strong>
+是一个用于求解有向带权图单源最短路径的算法。这一算法在随机的稀疏图上表现出色，并且适用于带有负边权的图。然而<code>SPFA</code>在最坏情况的时间复杂度与
+<code>Bellman-Ford</code>
+算法相同，因此在非负边权的图中使用堆优化的Dijkstra算法效率可能优于<code>SPFA</code>。（只要图当中没有负环，都可以用<code>SPFA</code>来求）主要是优化
+<code>dist[b] = dist[a] + w;</code>
+中的<code>dist[a]</code>如果<code>dist[a]</code>变小了之后<code>dist[b]</code>才会变小，才会有优化的可能</p>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p><u>初始化所有点到源点的距离</u></p>
+<p>初始化队列，源点已确定 -&gt; 入队列</p>
+</blockquote>
+<blockquote>
+<p><strong>第二步：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/笔记21984.png" srcset="/img/loading.gif" lazyload
+alt="笔记21984" />
+<figcaption aria-hidden="true">笔记21984</figcaption>
+</figure>
+<p>将源点放入队列中，遍历当前队列中取出的队头元素（该点是已经被更新过的点，也即该点之后的点再更新才有意义），根据队头元素遍历其所相邻的所有点并更新其最短距离并将这些点压入队列中重复上述操作</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码34923.png" srcset="/img/loading.gif" lazyload
+alt="代码34923" />
+<figcaption aria-hidden="true">代码34923</figcaption>
+</figure>
+</blockquote>
+<h4 id="多源最短路径算法">多源最短路径算法</h4>
+<h5
+id="弗洛伊德-沃歇尔算法floyd-warshall">1.弗洛伊德-沃歇尔算法（Floyd-Warshall）</h5>
+<p>​ <strong>描述：</strong>
+是一种在具有正边权重或负边权重（但没有负循环）的有向加权图中查找最短路径的算法</p>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p><code>n</code>为点总数，用矩阵存储边权，每次更新当前遍历到的结点到任意源点最短距离直到所有距离都更新完</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码34847.png" srcset="/img/loading.gif" lazyload
+alt="代码34847" />
+<figcaption aria-hidden="true">代码34847</figcaption>
+</figure>
+</blockquote>
+<h3 id="最小生成树">3.最小生成树</h3>
+<p>==算法框图==</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/最小生成树.png" srcset="/img/loading.gif" lazyload
+alt="最小生成树" />
+<figcaption aria-hidden="true">最小生成树</figcaption>
+</figure>
+<h5 id="普利姆算法prim">1.普利姆算法（Prim）</h5>
+<p>​ <strong>描述：</strong></p>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p><u>初始化所有距离为<code>+∞</code></u></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/笔记259234.png" srcset="/img/loading.gif" lazyload
+alt="笔记259234" />
+<figcaption aria-hidden="true">笔记259234</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<p><strong>第二步：</strong></p>
+<p><u>集合：当前已经在连通块中的所有点</u></p>
+<p>迭代n遍找到集合外能够到达集合内部距离最近的点放入t，用t更新其他点到集合的距离（此时t为待定加入集合）最后并将t加入到集合中</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码48957.png" srcset="/img/loading.gif" lazyload
+alt="代码48957" />
+<figcaption aria-hidden="true">代码48957</figcaption>
+</figure>
+</blockquote>
+<h5
+id="普利姆算法堆优化版算法与堆优化版dijkstra算法类似">2.普利姆算法堆优化版算法（与堆优化版dijkstra算法类似）</h5>
+<h5 id="克鲁斯卡尔算法kruskal">3.克鲁斯卡尔算法（Kruskal）</h5>
+<p>​ <strong>描述：</strong></p>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p>先对所有边权按照大小排序，然后枚举每条边的权重</p>
+<figure>
+<img
+src="C:\Users\Adrew\AppData\Roaming\Typora\typora-user-images\image-20230726141215523.png" srcset="/img/loading.gif" lazyload
+alt="image-20230726141215523" />
+<figcaption aria-hidden="true">image-20230726141215523</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<p><strong>Kruskal算法代码：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码490562.png" srcset="/img/loading.gif" lazyload
+alt="代码490562" />
+<figcaption aria-hidden="true">代码490562</figcaption>
+</figure>
+</blockquote>
+<h3 id="二分图">4.二分图</h3>
+<p>​ <strong>描述：</strong>
+可以将所有的点划分到两边使得所有的边在集合之间存在，集合内部不存在边的图可称为二分图。一个图是二分图当且仅当图中不含奇数环，反之如果一个图含有奇数环他就不可能是二分图</p>
+<p>==算法框图==</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/二分图.png" srcset="/img/loading.gif" lazyload
+alt="二分图" />
+<figcaption aria-hidden="true">二分图</figcaption>
+</figure>
+<h5 id="染色法">1.染色法</h5>
+<h5
+id="描述-通过对每一个点进行染色一个接一个染如果最后某一种颜色出现了奇数次就错误了返回false在dfs或者是bfs中出现了一条边上面的两个点都是相同颜色也出错误了返回false"><strong>描述：</strong>
+通过对每一个点进行染色，一个接一个染，如果最后某一种颜色出现了奇数次就错误了返回<code>false</code>，在<code>dfs</code>或者是<code>bfs</code>中出现了一条边上面的两个点都是相同颜色也出错误了返回<code>false</code></h5>
+<p>==算法步骤==</p>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p>遍历所有点，给每个点染色，<code>dfs</code>递归处理所有点染色</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/笔记2449457.png" srcset="/img/loading.gif" lazyload
+alt="笔记2449457" />
+<figcaption aria-hidden="true">笔记2449457</figcaption>
+</figure>
+</blockquote>
+<blockquote>
+<p><strong>代码实现：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码39547.png" srcset="/img/loading.gif" lazyload
+alt="代码39547" />
+<figcaption aria-hidden="true">代码39547</figcaption>
+</figure>
+</blockquote>
+<h5 id="匈牙利算法">2.匈牙利算法</h5>
+<p>​ <strong>描述：</strong> 不存在两条边是共用了一个点的为成功的匹配 |
+并且可以返回匹配成功时匹配数量最大的是多少</p>
+<blockquote>
+<p><strong>有趣的实例：</strong></p>
+<ul>
+<li><p>第一个男生有看上两个心意的你女生，而且第一个女生是单身状态就牵红线</p></li>
+<li><p>第二个男生也看上两个心仪的女生，刚好第一个心仪的女生为单身状态就牵红线了</p></li>
+<li><p>第三个男生只看上一个心仪的女生，当前这个女生在跟第一个男生热恋中，但是第三个男生不放弃去询问第一个男生还有没有其他的可能，发现有其他的可能第一个男生就去与他心仪的第二女生牵红线，当前男生根这个被空出女生牵红线了</p></li>
+<li><p>第四个男生只看上一个心仪的女生，刚好当前心仪的女生为单身状态，就牵红线了</p></li>
+</ul>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/笔记2584.png" srcset="/img/loading.gif" lazyload
+alt="笔记2584" />
+<figcaption aria-hidden="true">笔记2584</figcaption>
+</figure>
+<p>就是讲的是匈牙利算法当遇到没法连接的点时就去不断地询问他希望连接的点已经对应的点是否还有其他连接的可能，如果有就更改连接匹配成功，如果没有就表示匹配不成功，再进行下一个点的匹配操作</p>
+</blockquote>
+<blockquote>
+<p><strong>第一步：</strong></p>
+<p>遍历左半部点集依次为每一个点匹配一个右半部的点，匹配成功返回<code>true</code>匹配失败返回<code>false</code>，然后再进行下一个点的匹配操作</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/代码35937.png" srcset="/img/loading.gif" lazyload
+alt="代码35937" />
+<figcaption aria-hidden="true">代码35937</figcaption>
+</figure>
+</blockquote>
+<hr />
+<h2 id="四数学知识">四、数学知识</h2>
+<h3 id="质数">1.质数</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>1.判断质数：</strong></p>
+<p><strong>2.分解质因数：</strong></p>
+<p>​
+<strong>概念：质因数</strong>（<strong>素因数</strong>或<strong>质因子</strong>）在<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/数论/3700?fromModule=lemma_inlink">数论</a>里是指能整除给定正<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/整数?fromModule=lemma_inlink">整数</a>的<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/质数/263515?fromModule=lemma_inlink">质数</a>。除了1以外，两个没有其他共同质因子的正整数称为<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/互质/577412?fromModule=lemma_inlink">互质</a>。因为1没有质因子，1与任何正整数（包括1本身）都是互质。正整数的<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/因数分解/5827933?fromModule=lemma_inlink">因数分解</a>可将正整数表示为一连串的质因子相乘，质因子如重复可以用<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/指数/3519666?fromModule=lemma_inlink">指数</a>表示。根据<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/算术基本定理/10920095?fromModule=lemma_inlink">算术基本定理</a>，任何正整数皆有独一无二的质因子分解式。只有一个质因子的正整数为质数。</p>
+<p>​ <strong>性质：</strong>n当中最多只包含一个大于<span
+class="math inline">\(\sqrt{n}\)</span>的质因子</p>
+<p><strong>3.筛选质数：</strong></p>
+<p>​ <strong>概念</strong>晒出1到n中任意个数的所有质数个数</p>
+<p>​ <strong>朴素版：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/筛质数朴素版.png" srcset="/img/loading.gif" lazyload
+alt="筛质数朴素版" />
+<figcaption aria-hidden="true">筛质数朴素版</figcaption>
+</figure>
+<p>​
+当筛到一个数p时，将他后面所有的倍数都删除，如果遍历到p时判断它没有被删除可以确定在2到p-1没有p的约数，也即p不是2到p-1所有数的倍数，所以说p即质数</p>
+<p>​ 时间复杂度：<span class="math inline">\(\frac n2+\frac n3+\frac
+n4+\frac n5+...+\frac nn\)</span>为调和级数<span
+class="math inline">\(ln^n+C\)</span>可以看作<span
+class="math inline">\(O(log_e^n)\)</span>或者看作<span
+class="math inline">\(O(nlog^n)\)</span>,</p>
+<p>​
+<strong>埃氏筛法（埃拉特斯特尼筛法）：</strong><code>朴素版经过简单的优化</code>不需要筛除所有数的倍数，而只需要将2到p-1所有的质数筛出掉就可以了，优化过后时间复杂度可以降低到<span
+class="math inline">\(O(log^{log^{n}})\)</span>（准确来说）（质数定理：1到n当中有<span
+class="math inline">\(\frac n{ln^n}\)</span>个质数）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">get_primes</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i ++ )<br>&#123;<br>  <span class="hljs-keyword">if</span>(!st[i])<br>  &#123;<br>      prime[cnt ++ ] = i;<br>  &#125;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i + i; j &lt;= n; j += i) st[j] = <span class="hljs-literal">true</span>;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>​ <strong>线性筛法（欧拉线性筛、欧拉筛）：</strong></p>
+<p>​
+blog：https://majorli.github.io/algo_guide/ch05/sec01/511_euler_seive.html</p>
+<p>​ 争取把每一个和数用它的最小质因子筛掉</p>
+<p>​ <code>重点：n只会被最小质因子筛掉</code></p>
+<p>​ 1、i % primes[j] == 0</p>
+<p>​ primes[j] 一定是i的最小质因子，primes[j]也已经是primes[j] *
+i的最小质因子</p>
+<p>​ 2、i % primes[j] != 0</p>
+<p>​ primes[j]一定是小于i的所有质因子，primes[j]也一定是primes[j] *
+i的最小质因子</p>
+<p>​ 对于一个和数，假设primes[j]是x的最小质因子，当i枚举到 x / primes[j]
+的时候会被筛出掉</p>
+<p>​
+以上两种情况下都可以筛出最小质因子的倍数所以，最后每个数只会被筛一次</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">get_primes</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i ++ )<br>&#123;<br>  <span class="hljs-keyword">if</span>(!st[i]) prime[cnt ++ ] = i;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; prime[j] &lt;= n / i; j ++)<br>  &#123;<br>      st[prime[j] * i] = <span class="hljs-literal">true</span>;<br>      <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>; <span class="hljs-comment">// prime[j] 一定是i的最小质因子</span><br>  &#125;<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="约数">2.约数</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>1.判断约数：</strong></p>
+<p>​
+<strong>试除法：</strong><code>for(int i = 1; i &lt;= n / i; i ++)</code>遍历每一个数判断当前这个数i是否使n的约束是则存储，最后输出</p>
+<p><strong>2.约数个数：</strong></p>
+<p>​
+<strong>算数基本定理：</strong>又称为<strong>正整数</strong>的<strong>唯一分解定理</strong>,即:每个大于1的自然数均可写为质数的积,而且这些素因子按大小排列之后,写法仅有一种方式。</p>
+<p>​ 公式：<span class="math inline">\(N = {p_1}^{r_1} + {p_2}^{r_2} +
+{p_3}^{r_3} + {p_4}^{r_4} + ... +{p_n}^{r_n}\)</span>
+（pi是质数却ri&gt;=0）</p>
+<p>​ 而<strong>求N因子个数</strong>可以用<span
+class="math inline">\(r_1,r_2,r_3,...,r_n\)</span>来求</p>
+<p>​ 而N的约束可以由约数<span class="math inline">\(d = {p_1}^{\beta_1} +
+{p_2}^{\beta_2} + {p_3}^{\beta_3} + {p_4}^{\beta_4} + ...
++{p_n}^{\beta_n}\)</span>来分析，中的<span
+class="math inline">\(\beta_1,\beta_2,...,\beta_n\)</span>都是从[0,r1],[0,r2],...,[0,rn]中
+取值的，最后不同的取值得到的d不同且唯一（<strong>算数基本定理</strong>）所以得到数因子个数公式</p>
+<p>​ 公式：<span class="math inline">\(ans1 =
+(1+r_1)*(1+r_2)*(1+r_3)*...*(1+r_n)\)</span></p>
+<p>​
+这个式子：例如<strong>1+r1就是p1的选择有0个至r1个，有1+r1种情况</strong>，其他的一个道理，最后把它们乘起来，主要是运用了排列组合</p>
+<p><strong>3.约数之和：</strong></p>
+<p>​ 公式：<span class="math inline">\(ans2=({p_1}^0 + {p_1}^1 + {p_1}^2
++ ... + {p_1}^ {\alpha _{1}}) \times ({p_2}^0 + {p_2}^1 + {p_2}^2 + ...
++ {p_2}^{\alpha _{2}}) \times ... \times ({p_k}^0 + {p_k}^1 + {p_k}^2 +
+... + {p_k}^{\alpha _{k}})\)</span></p>
+<p>​ 相当于有<span class="math inline">\(ans1\)</span>个<span
+class="math inline">\(sub={p_1}^{\beta_1}\times{p_2}^{\beta_2}\times...\times{p_k}^{\beta_k}\)</span>（<span
+class="math inline">\(\beta_1\in[0,\alpha_1], \beta_2\in[0,\alpha_2],
+...\)</span>）相加而成，所么每一个<span
+class="math inline">\(sub\)</span>其实就是<span
+class="math inline">\(ans2\)</span>的一个约数，所有不重复的组合每一个约数不同且唯一（<strong>算数基本定理</strong>）所以最后只用求最后<span
+class="math inline">\(ans2\)</span>总和的约数和即可</p>
+<p><strong>4.最大公约数</strong></p>
+<p>​ 如果有一个整数b，满足 b / a 和 b / d能整除， 则有 <span
+class="math inline">\(\frac b{x*a+y*d}\)</span>能整除</p>
+<p>​ <strong>核心公式：</strong><span class="math inline">\(gcd(a, b) =
+gcd(a, a \% b)\)</span></p>
+<p>​ <strong>1、辗转相除法：</strong></p>
+<p>​
+又称<strong><font color='green'>欧几里德算法</font></strong>，是求两个数的<em>最大公约数（greatest
+common
+divisor）</em>的一种方法。用较大的数除以较小的数，再以除数和余数反复做除法运算，当余数为0时，取当前算式除数为最大公约数。</p>
+<p>​ 求30和18的最大公约数：</p>
+<p>​ 30/18=1余12</p>
+<p>​ 18/12=1余6</p>
+<p>​ 30和18的最大公约数为6</p>
+<p>​ <strong>2、更相减损法</strong></p>
+<p>​
+更相减损法原本是为了约分而设计的：可半者半之，不可半者，副置分母、子之数，以少减多，更相减损，求其等也。以等数约之。</p>
+<p>​
+1.任意给定两个正整数，判断他们是否都是偶数。若是，则用2约简；若不是则执行第二步</p>
+<p>​
+2.以较大的数减较小的数，接着把所得的差与较小的数比较，并以大数减小数。继续操作2直到所得到的减数和差相等为止</p>
+<p>​ <strong>辗转相除法与更相减损术的比较</strong></p>
+<p>​
+（1）两者都是求最大公因数的方法，计算上辗转相除法以除法为主，更相减损术以减法为主，计算次数上辗转相除法计算次数相对较少，特别当两个数字大小区别较大时计算次数的区别较明显。</p>
+<p>​
+（2）从结果体现形式来看，辗转相除法体现结果是以相除余数为0则得到，而更相减损术则以减数与差相等而得到。</p>
+</blockquote>
+<h3 id="欧拉函数">3.欧拉函数</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>说法：</strong>记号<span
+class="math inline">\(\phi(n)\)</span>表示<span class="math inline">\(1
+\sim n\)</span>当中与<span
+class="math inline">\(n\)</span>互质的数的个数</p>
+<p>N分解质因数后的公式：<span class="math inline">\(N = {p_1}^{\alpha_1}
++ {p_2}^{\alpha_2} + {p_3}^{\alpha_3} + {p_4}^{\alpha_4} + ...
++{p_n}^{\alpha_n}\)</span>（<span
+class="math inline">\(p_i\)</span>是质数却<span
+class="math inline">\(\alpha_i&gt;=0\)</span>）</p>
+<p>有公式<span
+class="math inline">\(\phi_1(n)=N(1-\frac1{p_1})(1-\frac1{p_2})(1-\frac1{p_3})...(1-\frac1{p_n})\)</span>(<strong>容斥原理证明</strong>)</p>
+<p><strong>容斥原理证明：</strong></p>
+<p>1.从<span class="math inline">\(1 \sim N\)</span>当中减去<span
+class="math inline">\(p_1，p_2，...,p_n\)</span>的所有倍数</p>
+<p>2.从<span class="math inline">\(1 \sim N\)</span>当中加上<span
+class="math inline">\(p_1*p_2,p_1*p_3,...,p_i*p_j\)</span>的倍数</p>
+<p>3.从<span class="math inline">\(1\sim N\)</span>当中减去<span
+class="math inline">\(p_1*p_2*p_3,p_1*p_3*p_4,...,p_i*p_j*p_k\)</span>的倍数</p>
+<p>...</p>
+<p>得到<span class="math inline">\(\phi_2(n)=N-{\frac N{p_1}}-{\frac
+N{p_2}}-{\frac N{p_3}}-...-{\frac N{p_n}}+{\frac N{p_1p_2}}+{\frac
+N{p_1p_3}}+...+{\frac N{p_ip_j}}-{\frac N{p_1p_2p_3}}-{\frac
+N{p_1p_3p_4}}-...-{\frac N{p_ip_jp_k}}+...\)</span></p>
+<p>最后<span
+class="math inline">\(\phi(n)=\phi_1(n)=\phi_2(n)\)</span>即欧拉函数</p>
+<p><strong>筛法（优化找到质因数）：</strong></p>
+<p>见上素数筛法一讲</p>
+<p><code>acwing 874.筛法求欧拉函数</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> LL;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1000010</span>;<br><span class="hljs-type">int</span> primes[N], phi[N], cnt;<br><span class="hljs-type">bool</span> st[N];<br><br><span class="hljs-function">LL <span class="hljs-title">get_eulers</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function"></span>&#123;<br>phi[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i ++)<br>&#123;<br>  <span class="hljs-keyword">if</span>(!st[i])<br>  &#123;<br>      primes[cnt ++] = i;<br>      phi[i] = i - <span class="hljs-number">1</span>;   <br>  &#125;<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; primes[j] &lt;= n / i; j ++)<br>  &#123;<br>      st[primes[j] * i] = <span class="hljs-literal">true</span>;<br>      <span class="hljs-keyword">if</span>(i % primes[j] == <span class="hljs-number">0</span>)<br>      &#123;<br>          phi[primes[j] * i] = primes[j] * phi[i];<br>          <span class="hljs-keyword">break</span>;<br>      &#125;<br>      phi[primes[j] * i] = (primes[j] - <span class="hljs-number">1</span>) * phi[i];<br>  &#125;<br>&#125;<br><br>LL res = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++ ) res += phi[i];<br><span class="hljs-keyword">return</span> res;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">int</span> n;<br>cin &gt;&gt; n;<br><br>cout &lt;&lt; <span class="hljs-built_in">get_eulers</span>(n) &lt;&lt; endl;<br><br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="快速幂">4.快速幂</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>1.快速幂</strong></p>
+<p>​ 快速的求出<span class="math inline">\(a^k \bmod
+p\)</span>的结果，在<span
+class="math inline">\(O(log^k)\)</span>时间复杂度内求出来</p>
+<p><strong>反复平方法：</strong></p>
+<p>需要预处理出来一些结果,目标就是将<span
+class="math inline">\(k\)</span>拆成<span
+class="math inline">\(2^{x_1},2^{x_2},2^{x_3},...,2^{x_k}\)</span>累加和，例：<span
+class="math inline">\((5)_{10}=(101)_{2}\)</span>就可以拆成<span
+class="math inline">\(k=2^0+2^2\)</span>:</p>
+<p><span class="math inline">\(mod_0=a^{2^0} (\bmod p)\)</span></p>
+<p><span class="math inline">\(mod_1=a^{2^1} (\bmod p)\)</span></p>
+<p><span class="math inline">\(mod_2=a^{2^2} (\bmod p)\)</span></p>
+<p>...</p>
+<p><span class="math inline">\(mod_{log_k}=a^{2^{log_k}} (\bmod
+p)\)</span></p>
+<p>需要将上面结果的数先存储下来，最终需要求<span
+class="math inline">\(2^k \bmod p\)</span>的结果的话就只用求，<span
+class="math inline">\(mod_1,...,mod_{log_k}\)</span>中k权值为1的书的累乘即可</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">qmi</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> k, <span class="hljs-type">int</span> p)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">int</span> res = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span>(k)<br>&#123;<br>  <span class="hljs-keyword">if</span>(k &amp; <span class="hljs-number">1</span>) res = (LL)res * a % p;<br>  k &gt;&gt;= <span class="hljs-number">1</span>;<br>  a = a * a % p;<br>&#125;<br><span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>2.快速幂求逆元</strong></p>
+<p>​ 如果<span class="math inline">\(\frac
+ab\)</span>是一个整数的话，我们希望不做除法（取余数出发比较麻烦），如果能够找到一个数<span
+class="math inline">\(x\)</span>使得<span class="math inline">\(\frac ab
+\equiv a \times x \ \ (\bmod m)\)</span> (1)余数相同的话，就把<span
+class="math inline">\(x\)</span>叫做<span
+class="math inline">\(b\)</span>模<span
+class="math inline">\(m\)</span>的逆元，这个<span
+class="math inline">\(x\)</span>记作标记符<span
+class="math inline">\(b^{-1}\)</span>,将式(1)变换一下</p>
+<p>​ 通俗来讲就是给定一个<span
+class="math inline">\(b\)</span>找到一个<span
+class="math inline">\(x\)</span>使得<span class="math inline">\(b \times
+x \equiv 1 \ \ (\bmod
+p)\)</span>,又根据<strong>费马小定理</strong>，如果b是质数的话即只需要求出<span
+class="math inline">\(b·b^{p-2} \equiv 1\ \ (\bmod p)\)</span>中的<span
+class="math inline">\(b^{p-2}\)</span>即可，又因为p是质数所以p-2是合法的</p>
+<p><strong>费马小定理：</strong></p>
+<p>是数论中的一个定理。假如a是一个整数，p是一个质数，那么<span
+class="math inline">\(a^p-a\)</span>是<span
+class="math inline">\(p\)</span>的倍数，可以表示为</p>
+<p><span class="math display">\[a^p \equiv a\ \ (\bmod p)\]</span></p>
+<p>如果<span class="math inline">\(a\)</span>不是<span
+class="math inline">\(p\)</span>的倍数，这个定理也可以写成<strong>更加常用的形式</strong></p>
+<p><span class="math display">\[a^{p-1} \equiv 1\ \ (\bmod
+p)\]</span></p>
+<p>费马小定理的逆叙述不成立，即假如<span
+class="math inline">\(a^p-a\)</span>是<span
+class="math inline">\(p\)</span>的倍数，<span
+class="math inline">\(p\)</span>不一定是一个质数。例如<span
+class="math inline">\(2^{341}−2\)</span>是<span
+class="math inline">\(341\)</span>的倍数，但<span
+class="math inline">\(341=11×31\)</span>,不是质数。满足费马小定理的合数被称为费马伪素数。</p>
+</blockquote>
+<h3 id="扩展欧几里得算法">5.扩展欧几里得算法</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>扩展欧几里得算法</strong></p>
+<p>在原先欧几里算法基础上进行扩展完成对裴蜀定理中x，y的求解，即典型求<code>给定 n 对正整数 ai,bi对于每对数，求出一组 xi,yi使其满足 ai×xi+bi×yi=gcd(ai,bi)</code></p>
+<p><strong>裴蜀定理：</strong></p>
+<p>1、对于任意一对正整数a,b,那么一定存在非零整数x,y,使得ax+by=GCD(a,b),a和b最大公约数就是a和b能够凑出来的最小的正整数</p>
+<p>2、而扩展欧几里得算法就是给定任意正整数a，b都可以构造出来非零整数x，y使得满足ax+by=GCD(a,b)</p>
+<p>3、凡是能够有x,y凑出来的数都是GCD(a,b)的倍数</p>
+<p><code>acwing 877.扩展欧几里得算法</code></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/扩展欧几里得算法推导.png" srcset="/img/loading.gif" lazyload
+alt="扩展欧几里得算法推导" />
+<figcaption aria-hidden="true">扩展欧几里得算法推导</figcaption>
+</figure>
+<p><strong>线性同余方程：</strong></p>
+<p>给定任意正整数<span class="math inline">\(a, b,
+m\)</span>求得一个<span class="math inline">\(x\)</span>使得其满足<span
+class="math inline">\(a \times x \equiv b \ (\bmod m)\)</span></p>
+<p>设<span class="math inline">\(y\)</span>使得上述等式转换<span
+class="math inline">\(a \times x = b + m \times y\)</span>，即求<span
+class="math inline">\(a \times x - m \times y= b\)</span>，令<span
+class="math inline">\(y^‘=-y\)</span>则<span class="math inline">\(a
+\times x + m \times {y^‘}= b\)</span>其实就是求满足a,
+b最大公约数时候<span class="math inline">\((a \times x + m \times {y^‘})
+\times \frac bd= d \times \frac
+bd\)</span>，所以x，y的值最终结果就是<span class="math inline">\(\frac
+bd \times
+x\)</span>(<code>d=exgcd(int a, int b, int&amp; x, int&amp; y)</code>最大公约数等式右边)</p>
+</blockquote>
+<h3 id="中国剩余定理">6.中国剩余定理</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>​</p>
+</blockquote>
+<h3 id="高斯消元">7.高斯消元</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>将方程组的系数抽出来，再加一列方程组的值bi形成一个<span
+class="math inline">\(n \times (n + 1)\)</span>的矩阵</p>
+<p><strong>初等行列变换：</strong></p>
+<p>​ 1.把某一行乘一个非零的数 === 方程等式左右两边乘上一个相同的数</p>
+<p>​ 2.交换某两行 === 两个方程上下位置交换</p>
+<p>​ 3.把某行的若干倍加到另一行 ===
+某一个方程乘上若干倍加到另一个方程上消元</p>
+<p>最后变换成的矩阵是上三角的形式：</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/高斯消元上三角矩阵.png" srcset="/img/loading.gif" lazyload
+alt="高斯消元上三角矩阵" />
+<figcaption aria-hidden="true">高斯消元上三角矩阵</figcaption>
+</figure>
+<p>​ 1.完美阶梯形 -&gt; 唯一解(0)</p>
+<p>​ 2.0 != 非零 -&gt; 无解(2)</p>
+<p>​ 3.0 == 0 -&gt; 无穷多组解(1)</p>
+<p><strong>高斯消元步骤：</strong></p>
+<p>​ 枚举每一列c</p>
+<p>​ 1、找到当前这一列绝对值最大的一行</p>
+<p>​ 2、将这一行换到最上面去</p>
+<p>​ 3、将该行的第一个数转成1</p>
+<p>​ 4、将下面所有行的第c列消成0</p>
+<p><strong>异或方程组消元步骤：</strong></p>
+<p>异或：不进位的加法</p>
+<p>​ 1.消成三角矩阵</p>
+<p>​ 1 找到当前这一列绝对值最大的一行</p>
+<p>​ 2 将这一行换到最上面去</p>
+<p>​ 3 将该行的第一个数转成1</p>
+<p>​ 4 将下面所有行的第c列消成0</p>
+<p>​ 2.判断</p>
+<p>​ 1 完美 -&gt; 有唯一解</p>
+<p>​ 2 有矛盾 -&gt; 无解</p>
+<p>​ 3 无 -&gt; 无穷解</p>
+</blockquote>
+<h3 id="求组合数">8.求组合数</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>组合数:</strong> <span class="math display">\[
+C_{a}^{b}={\frac {a \times {(a - 1)} \times ... \times {(a - b + 1)}} {1
+\times 2 \times 3 \times ... \times {b}}}=\frac {a!} {b! \times {(a -
+b)!}}
+\]</span> <strong>多种情况：</strong></p>
+<p>1、10万种询问，1 &lt;= b &lt;= a &lt;= 2000 -&gt;
+采用递推模式：先预处理出来所有<span
+class="math inline">\(C_{a}^{b}\)</span></p>
+<p><strong>递推模式：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/组合数递推式1.png" srcset="/img/loading.gif" lazyload
+alt="组合数递推式1" />
+<figcaption aria-hidden="true">组合数递推式1</figcaption>
+</figure>
+<p>2、1万种询问，1 &lt;= b &lt;= a &lt;= 1e5 -&gt;
+预处理出来阶乘：先预处理出来所有的<span
+class="math inline">\(a!\)</span> , 询问的时候直接计算输出 <span
+class="math display">\[
+\frac {a!} {b! \times {(a - b)!}}
+\]</span> 3、20中询问，1 &lt;= b &lt;= a &lt;= 1e18 1 &lt;= p &lt;= 1e5
+-&gt; <strong>卢卡斯定理 Lucas：</strong> <span
+class="math inline">\(C_{a}^{b} \equiv C_{a \ \bmod \ p}^{b \ \bmod \
+p}·C_{a / p}^{b / p} \ (\bmod \ p)\)</span></p>
+<p><strong>卢斯定理简单证明：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/卢卡斯定理简单证明.png" srcset="/img/loading.gif" lazyload
+alt="卢卡斯定理简单证明" />
+<figcaption aria-hidden="true">卢卡斯定理简单证明</figcaption>
+</figure>
+<p>​
+<strong>详细证明：</strong>见https://www.cnblogs.com/onlyblues/p/15339937.html</p>
+<p>4、只算一个，但是需要将该数的组合数输出，且是一个非常大的数</p>
+<p>​ 从定义出发：</p>
+<p>​ 1.先把 <span class="math display">\[
+C_{a}^{b}=\frac {a \times {(a - 1)} \times ... \times {(a - b + 1)}} {1
+\times 2 \times 3 \times ... \times
+b}=p_1^{\alpha_1}·p_2^{\alpha_2}·p_3^{\alpha_3}···p_k^{\alpha_k}
+\]</span> ​ 分解质因数</p>
+<p>​ 2.写一个高精度乘法</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/组合数+高精度乘法.png" srcset="/img/loading.gif" lazyload
+alt="组合数+高精度乘法" />
+<figcaption aria-hidden="true">组合数+高精度乘法</figcaption>
+</figure>
+<p>​</p>
+<p>​
+<strong>问题：</strong><code>acwing 889.满足条件的01序列：</code>给定 n
+个 0 和 n 个 1，它们将按照某种顺序排成长度为 2n
+的序列，求它们能排列成的所有序列中，能够满足任意前缀序列中 0
+的个数都不少于 1 的个数的序列有多少个。</p>
+<p>​ <strong>卡塔兰数：</strong> <span class="math display">\[
+C_{2n}^{n}-C_{2n}^{n-1}=\frac {C_{2n}^{n}} {n+1}
+\]</span> ​ 所有的方案都可以找到(n,n)这个点</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/卡特兰数.png" srcset="/img/loading.gif" lazyload
+alt="卡特兰数" />
+<figcaption aria-hidden="true">卡特兰数</figcaption>
+</figure>
+</blockquote>
+<h3 id="容斥原理">9.容斥原理</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>韦恩图</strong></p>
+<p>举例一个三个圆拼起来的总面积：<span class="math inline">\(S_1 + S_2 +
+S_3 - S_1 \cap S_2 - S_1 \cap S_3 - S_2 \cap S_3 + S_1 \cap S_2 \cap
+S_3\)</span></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/容斥原理韦恩图.png" srcset="/img/loading.gif" lazyload
+alt="容斥原理韦恩图" />
+<figcaption aria-hidden="true">容斥原理韦恩图</figcaption>
+</figure>
+<p><strong>总的方案数 == 从n个数中选出任意多个数的方案数</strong></p>
+<p>​ <span
+class="math inline">\(\cancel{C_{n}^{0}}+C_{n}^{1}+C_{n}^{3}+...+C_{n}^{n}\)</span>即所有从n个数种选0个数的方案加成选1个数的方案加上选2个数的方案
+加加加 加到选n个数的方案</p>
+<p>​ <span class="math inline">\(2^n -
+1\)</span>表示的就是从n个数中选任意多个数的数量</p>
+<p>上面两个求出的是一个问题，所以等式两边是成立的</p>
+<p><span class="math inline">\(|S_1 \cup S_2 \cup S_3 \cup ··· \cup S_n|
+= \sum_{i}|S_i| - \sum_{i·j}|S_i \cap S_j| + \sum_{i·j·k}|S_i \cap S_j
+\cap S_k| - ···\)</span></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/容斥原理举例.png" srcset="/img/loading.gif" lazyload
+alt="容斥原理举例" />
+<figcaption aria-hidden="true">容斥原理举例</figcaption>
+</figure>
+</blockquote>
+<h3 id="博弈论">10.博弈论</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>Nim游戏：</strong></p>
+<p>​ <strong>先手必胜状态：可以走到某一个必败状态</strong></p>
+<p>​ <strong>先手必败状态：走不到任何一个必败状态</strong></p>
+<p><strong>一个栗子：</strong>给定 n
+堆石子，两位玩家轮流操作，每次操作可以从任意一堆石子中拿走任意数量的石子（可以拿完，但不能不拿），最后无法进行操作的人视为失败。</p>
+<p>问如果<strong>两人都采用最优策略，先手是否必胜。</strong></p>
+<p>有这样一个<strong>性质</strong>：<span class="math inline">\(a_1
+\oplus a_2 \oplus a_3 \oplus ... \oplus a_n =
+0\)</span>则先手必败，反之先手必胜</p>
+<p><strong>简单证明:</strong></p>
+<p>如果当前状态不是0的话，那么一定可以存在一个数x使得拿完x个石子后剩下的石子堆数量异或后为0</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/Nim简单证明.png" srcset="/img/loading.gif" lazyload
+alt="Nim简单证明" />
+<figcaption aria-hidden="true">Nim简单证明</figcaption>
+</figure>
+<p>如果当前石子数量状态时所有异或后是0，那么在拿完一个数x的石子之后，原石子堆各个数量异或值一定不会是0
+(反证法)</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/Nim简单证明2.png" srcset="/img/loading.gif" lazyload
+alt="Nim简单证明2" />
+<figcaption aria-hidden="true">Nim简单证明2</figcaption>
+</figure>
+<p><strong>台阶Nim游戏：</strong></p>
+<p><strong>mex{}函数是从集合当中找到不存在的最小自然数</strong></p>
+<p><strong>SG函数：</strong><span
+class="math inline">\(SG(x)=mex({SG(y_1), SG(y_2), SG(y_3), SG(y_4), ...
+, SG(y_k)})\)</span></p>
+<p>小结：任何一种非零的状态都可以有一种方案走到零，任何一种零的状态都走到不了零</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/SG函数.png" srcset="/img/loading.gif" lazyload
+alt="SG函数" />
+<figcaption aria-hidden="true">SG函数</figcaption>
+</figure>
+<p><strong>拆分Nim游戏：</strong></p>
+</blockquote>
+<h2 id="五动态规划">五、动态规划</h2>
+<p>​ <strong>描述：</strong></p>
+<h3 id="背包问题">1.背包问题</h3>
+<p>​
+<strong>描述：</strong>给定一些物品，这些物品的选择满足一定的<strong>条件</strong>(有选择方面的容量体积类别等限制)，问能够选择的物品<strong>属性</strong>(价值总和最大、价值总和最小、选法数量...等等)是多少</p>
+<p>​ <strong>注意：</strong>背包不一定装满</p>
+<blockquote>
+<p><strong>1. 0 1 背包：</strong>每件物品最多只用一次</p>
+<p>​ 每一件物品都有体积和权重两个属性，从前i个物品中选
+选出不超过背包最大体积的选法中总价值最大的选法的价值</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/01背包问题状态分析.png" srcset="/img/loading.gif" lazyload
+alt="01背包问题状态分析" />
+<figcaption aria-hidden="true">01背包问题状态分析</figcaption>
+</figure>
+<p><strong>2. 完全背包：</strong>每件物品有无限个</p>
+<p>​ 所有只考虑前i个物品，且总体积不大于j的所有选法</p>
+<p>​ <strong>1、朴素版：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/完全背包问题状态分析.png" srcset="/img/loading.gif" lazyload
+alt="完全背包问题状态分析" />
+<figcaption aria-hidden="true">完全背包问题状态分析</figcaption>
+</figure>
+<p>​ <strong>2、优化版：</strong></p>
+<p>​ 问题优化</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/完全背包问题优化.png" srcset="/img/loading.gif" lazyload
+alt="完全背包问题优化" />
+<figcaption aria-hidden="true">完全背包问题优化</figcaption>
+</figure>
+<p><strong>3. 多重背包：</strong>每个物品有确定的个数</p>
+<p>​ <strong>1、朴素版：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/多重背包问题状态分析.png" srcset="/img/loading.gif" lazyload
+alt="多重背包问题状态分析" />
+<figcaption aria-hidden="true">多重背包问题状态分析</figcaption>
+</figure>
+<p>​ <strong>2、优化版：</strong></p>
+<p>问题优化：先按照多重背包优化方式考虑</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">f[i,j]=<span class="hljs-built_in">max</span>(f[i<span class="hljs-number">-1</span>,j],f[i<span class="hljs-number">-1</span>,j-v]+w,f[i<span class="hljs-number">-1</span>,j<span class="hljs-number">-2</span>v]+<span class="hljs-number">2</span>w,...,f[i<span class="hljs-number">-1</span>,j-sv]+sw)<br>f[i,j-v]=<span class="hljs-built_in">max</span>(		f[i<span class="hljs-number">-1</span>,j-v],  f[i<span class="hljs-number">-1</span>,j<span class="hljs-number">-2</span>v]+w, ...,f[i<span class="hljs-number">-1</span>,j-sv]+(s<span class="hljs-number">-1</span>)w,f[i<span class="hljs-number">-1</span>,j-(s+<span class="hljs-number">1</span>)v]+sw)<br></code></pre></td></tr></table></figure>
+<p>已知前s个方案的最大值是无法求出第s个方案的最大值的所以多重背包不能用完全背包的优化方式来优化</p>
+<p><strong>二进制优化方式：</strong></p>
+<p>将一个物品拆分成数量为1，2，4，8，16，...，c的物品，再按照01背包问题处理即可</p>
+<p><strong>4.分组背包：</strong>每一个组里面最多选择一个物品</p>
+<p>​
+例如在<strong>水果</strong>这一个组别中选择了苹果就不能选择其他水果了</p>
+</blockquote>
+<h3 id="线性dp">2.线性DP</h3>
+<p>​
+<strong>描述：</strong>多维状态有一个大概的的线性顺序的推理方式的话，就可称其为线性DP</p>
+<p>​ 一般动态规划问题<strong>时间复杂度</strong>计算 <strong>状态数量 ×
+状态转移计算量</strong></p>
+<blockquote>
+<p><strong>1.数字三角形：</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/线性DP数字三角形.png" srcset="/img/loading.gif" lazyload
+alt="线性DP线性三角形" />
+<figcaption aria-hidden="true">线性DP线性三角形</figcaption>
+</figure>
+<p><strong>2.最长上升子序列：</strong></p>
+<p>​ <strong>Ⅰ：朴素版</strong><span
+class="math inline">\(O(n^2)\)</span></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/线性DP最长上升子序列.png" srcset="/img/loading.gif" lazyload
+alt="线性DP最长上升序列" />
+<figcaption aria-hidden="true">线性DP最长上升序列</figcaption>
+</figure>
+<p>状态转移公式：<span class="math inline">\(if(a[i] &gt;a[j]) \ \
+f[i]=max(f[j] + 1), \ \ a_j&lt;a_i, \ \ j=0,1,2,3,...,i-1\)</span></p>
+<p>​ <strong>Ⅱ：优化版</strong></p>
+<p>​</p>
+<p><strong>３．最长公共子序列：</strong></p>
+<p>​</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/线性DP最长公共子序列.png" srcset="/img/loading.gif" lazyload
+alt="线性DP最长公共子序列" />
+<figcaption aria-hidden="true">线性DP最长公共子序列</figcaption>
+</figure>
+<p>f[i-1,j]和f[i,j-1]其实就已经包含了f[i-1,j-1]所以计算时不需要把f[i-1,j-1]计算也行</p>
+</blockquote>
+<h3 id="区间dp">3.区间DP</h3>
+<p>​ <strong>描述：</strong>状态表示一般就是表示某一个区间</p>
+<blockquote>
+<p><strong>合并石子：</strong><code>Acwing.282</code></p>
+<p>以最后一次合并的两堆石子来分类，最后一定是左边一堆若干个石子，右边那一堆若干个石子</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/区间DP石子合并.png" srcset="/img/loading.gif" lazyload
+alt="区间DP堆石子" />
+<figcaption aria-hidden="true">区间DP堆石子</figcaption>
+</figure>
+<p>状态转移公式：<span class="math inline">\(f[i,j]= min(f[i,k], f[i][k]
++ f[k + 1][j] + s[k] - s[i - 1]), \  k=i \sim j-1\)</span></p>
+</blockquote>
+<h3 id="计数类dp">4.计数类DP</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>整数划分:</strong> <code>AcWing.900</code></p>
+<p>​ 一个正整数 n
+可以表示成若干个正整数之和，形如：n=n1+n2+…+nk，其中n1≥n2≥…≥nk,k≥1。</p>
+<p>​ 我们将这样的一种表示称为正整数 n 的一种划分。</p>
+<p>​ 现在给定一个正整数 n，请你求出 n 共有多少种不同的划分方法。</p>
+<p><strong>思路：</strong>问题可以从背包问题思考模式进入，将题目了看成有n种物品（1
+~ n 数字）
+每种物品（每个数字）有无限个，考虑放进容量为n的背包中看有多少种方案
+<strong>其实这个问题就转换成一个完全背包问题 只是所需要求的属性是
+数量</strong></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/计数类DP整数划分.png" srcset="/img/loading.gif" lazyload
+alt="计数类DP整数划分" />
+<figcaption aria-hidden="true">计数类DP整数划分</figcaption>
+</figure>
+<p>集合：考虑从前i个数中选择数使得这些数的总和恰好是j的方案数</p>
+<p>属性：Num</p>
+<p><strong>优化：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++">f[i][j] = f[i - <span class="hljs-number">1</span>][j] + f[i - <span class="hljs-number">1</span>][j - i] + f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">2</span> * i] + f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">3</span> * i] + ... + f[i - <span class="hljs-number">1</span>][j - s * i]<br>f[i][j - i] =           f[i - <span class="hljs-number">1</span>][j - i] + f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">2</span> * i] + f[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">3</span> * i] + ... + f[i - <span class="hljs-number">1</span>][j - s * i]<br><span class="hljs-comment">// 得到 f[i][j] = f[i - 1][j] + f[i][j - i]</span><br><span class="hljs-comment">// f[j] = f[j] + f[j - i]</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="数位统计类dp">5.数位统计类DP</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>记数问题：</strong><code>AcWing.338</code></p>
+<p>​ 分情况讨论！</p>
+<p>​ [a, b], 0 ~ 9</p>
+<p>​ 实现一个count(n, x), 返回1 ~ n当中 x 出现的次数</p>
+<p>​ [a, b] 当中x出现的次数 = count(b, x) - count(a - 1, x);</p>
+<p>求出前n个数的<code>0~9</code>数字出现总个数采用前缀和处理任意一个[a,
+b]区间内把某一个数字出现的个数</p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/数位统计DP计数问题.png" srcset="/img/loading.gif" lazyload
+alt="数位统计DP计数问题" />
+<figcaption aria-hidden="true">数位统计DP计数问题</figcaption>
+</figure>
+</blockquote>
+<h3 id="状态压缩dp">6.状态压缩DP</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>蒙德里安的梦想：</strong><code>AcWing.291</code></p>
+<figure>
+<img
+src="/img/learning/acwing/basic_algorithm/状态压缩DP蒙德里安的梦想2.png" srcset="/img/loading.gif" lazyload
+alt="状态压缩DP蒙德里安的梦想2" />
+<figcaption aria-hidden="true">状态压缩DP蒙德里安的梦想2</figcaption>
+</figure>
+<p>​ <strong>动态规划：</strong></p>
+<p>​ -
+状态表示：f[i,j]表示已经将前i-1列摆好，且从第i-1列伸出到第i列状态是j的所有方案数（j是一个二进制数）</p>
+<p>​ -
+状态计算：因为前i-1列都是已经摆好的所以，由f[i-1,k]来计算f[i,j]，k表示当前所有从i-2伸出来到i-1的合法的方案，然后再继续判断记录当前状态j的所有合法方案</p>
+<p><strong>最短Hamilton路径：</strong><code>AcWing.91</code></p>
+<p>用一个<strong>整数</strong>表示状态，<strong>整数可以拆分成二进制表达方式</strong>，因此可以表示31个点的状态</p>
+<figure>
+<img
+src="/img/learning/acwing/basic_algorithm/状态压缩DP最短Hamilton路径.png" srcset="/img/loading.gif" lazyload
+alt="状态压缩DP最短Hamilton路径" />
+<figcaption aria-hidden="true">状态压缩DP最短Hamilton路径</figcaption>
+</figure>
+</blockquote>
+<h3 id="树形dp">7.树形DP</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>没有上司的舞会：</strong><code>AcWing.285</code></p>
+<figure>
+<img src="/img/learning/acwing/basic_algorithm/树形DP没有上司的舞会.png" srcset="/img/loading.gif" lazyload
+alt="树形DP没有上司的舞会" />
+<figcaption aria-hidden="true">树形DP没有上司的舞会</figcaption>
+</figure>
+<p>状态计算：</p>
+<figure>
+<img
+src="/img/learning/acwing/basic_algorithm/树形DP没有上司的舞会状态计算.png" srcset="/img/loading.gif" lazyload
+alt="树形DP没有上司的舞会状态计算" />
+<figcaption aria-hidden="true">树形DP没有上司的舞会状态计算</figcaption>
+</figure>
+</blockquote>
+<h3 id="记忆化搜索">8.记忆化搜索</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p><strong>滑雪：</strong><code>AcWing.901</code></p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/acwing/" class="category-chain-item">acwing</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/acwing/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/acwing/" class="print-no-link">#acwing</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/" class="print-no-link">#学习</a>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>acwing_基础算法</div>
+      <div>https://example.com/2023/07/23/acwing_基础算法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Andy</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/08/acwing_linux%E5%9F%BA%E7%A1%80/" title="acwing_linux基础">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">acwing_linux基础</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

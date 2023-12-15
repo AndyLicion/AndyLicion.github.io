@@ -1,0 +1,1484 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Andy">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="郑重声明： 注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取  链接：https:&#x2F;&#x2F;www.acwing.com 来源：AcWing 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。  Django框架 1.课程概论与Python3语法 ​ 描述：  课程体系   AcWing工程课体系——Django框架课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acwing_django框架课">
+<meta property="og:url" content="https://example.com/2023/09/15/acwing_django%E6%A1%86%E6%9E%B6%E8%AF%BE/index.html">
+<meta property="og:site_name" content="Andyのblog">
+<meta property="og:description" content="郑重声明： 注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取  链接：https:&#x2F;&#x2F;www.acwing.com 来源：AcWing 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。  Django框架 1.课程概论与Python3语法 ​ 描述：  课程体系   AcWing工程课体系——Django框架课">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://example.com/img/bg/mygirl.jpg">
+<meta property="article:published_time" content="2023-09-15T12:56:00.000Z">
+<meta property="article:modified_time" content="2023-12-15T11:31:31.187Z">
+<meta property="article:author" content="Andy">
+<meta property="article:tag" content="acwing">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="工程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://example.com/img/bg/mygirl.jpg">
+  
+  
+  
+  <title>acwing_django框架课 - Andyのblog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Andyのblog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/mygirl.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="acwing_django框架课"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-15 20:56" pubdate>
+          2023年9月15日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          18k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          152 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">acwing_django框架课</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>郑重声明：</p>
+<p>注意本文章所有内容都是在acwing网站学习记录需要请前往acwing网站学习获取</p>
+<ul>
+<li>链接：https://www.acwing.com</li>
+<li>来源：AcWing</li>
+<li>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</li>
+</ul>
+<h1 id="django框架">Django框架</h1>
+<h2 id="课程概论与python3语法">1.课程概论与Python3语法</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="课程体系">课程体系</h4>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/1.课程概论和Python3语法/AcWing工程课体系——Django框架课.png" srcset="/img/loading.gif" lazyload
+alt="AcWing工程课体系——Django框架课" />
+<figcaption
+aria-hidden="true">AcWing工程课体系——Django框架课</figcaption>
+</figure>
+<h4 id="django简介">Django简介</h4>
+<p>Django是后起之秀，近年来越来越流行，Youtube（20亿+）、Instagram（月活10亿+）等公司采用Django框架</p>
+<p>可以作为Web、App、小程序、AcWing云端App（AC App）等各种项目。</p>
+<p>Django优势：</p>
+<ul>
+<li>开发效率高，生态完善，有<a
+target="_blank" rel="noopener" href="https://www.djangoproject.com/">官方社区</a>产期支持</li>
+<li>运行效率高
+<ul>
+<li>项目运行效率瓶颈有很多，比如：数据库查询、网络带宽/延迟、硬盘读写速度等，这些与框架关系不大。</li>
+<li>计算密集型的模块可以用C/C++实现，然后编译成动态链接库再<code>import</code>进来。</li>
+<li>计算密集型的微服务可以通过<code>thrift</code>等工具对接，微服务的<code>Server</code>端代码可以用C/C++语言实现。</li>
+<li>有很多工具可以将Python代码翻译成C/C++，比如Cython、Pypy。<a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/">AcWing
+题库</a>中的不少题目，会发现Python3比Java还快一些。</li>
+</ul></li>
+<li>既适合大公司，也适合个人开发者，<strong>平均开发一个Web/AC
+App只需要半个月-1个月</strong>。</li>
+</ul>
+<hr />
+<h4 id="实战项目">实战项目</h4>
+<p>课程中会开发一款支持在线对战的简易版吃鸡游戏，前后端分离，前端支持AC
+APP端和Web端。</p>
+<p>功能包括：</p>
+<ul>
+<li>游戏菜单，游戏设置：熟悉http协议</li>
+<li>存储对局信息、账户信息：熟悉数据库操作</li>
+<li>在Redis中存储每局对战状态：熟悉内存数据库操作</li>
+<li>在线聊天室、实时移动、实时放技能：熟悉websocket协议</li>
+<li>在线匹配系统：熟悉thrift和为服务</li>
+<li>匹配nginx：熟悉nginx部署云服务</li>
+</ul>
+<hr />
+<h4 id="开发环境">开发环境</h4>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/1.课程概论和Python3语法/服务器结构.png" srcset="/img/loading.gif" lazyload
+alt="服务器结构" />
+<figcaption aria-hidden="true">服务器结构</figcaption>
+</figure>
+<ul>
+<li><p>完全无需配置本地环境。利用<code>AC Terminal</code>直接在云端开发，使用工具：<code>vim</code>、<code>tmux</code>等。不推荐在本地开发</p>
+<ul>
+<li>本项目会涉及多台服务器间的网络通信，如果在本地开发，未来不方便调试和部署。</li>
+<li>在本地开发无法统一开发环境，部分<code>python</code>包在<code>windows</code>系统上安装困难。</li>
+</ul></li>
+<li><p>需要租一台具有公网IP的云服务器，并安装<a
+target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">docker</a>。</p>
+<ul>
+<li>服务器配置无要求</li>
+<li>后期可以利用<a
+target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">docker</a>随意迁移</li>
+</ul></li>
+<li><p>在<code>AC Terminal</code>的<code>/var/lib/acwing/docker/images/</code>目录下给大家提供统一的课程<code>docker</code>镜像。</p>
+<ul>
+<li>标准化开发环境，避免未来出现软件版本不兼容。</li>
+<li>省去配环境的环节。</li>
+</ul></li>
+<li><p>使用<code>AC Git</code>或者<code>github</code>管理项目代码。</p>
+<ul>
+<li>方便回滚代码</li>
+</ul></li>
+</ul>
+<hr />
+<h4 id="python3语法">Python3语法</h4>
+<ul>
+<li>教学工具：<a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/2543025/">AC
+Terminal</a>。</li>
+<li><a
+target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/tutorial/index.html">python官方教程</a>。</li>
+</ul>
+</blockquote>
+<h2
+id="配置dockergit环境与项目创建">2.配置docker、git环境与项目创建</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="课前准备">课前准备</h4>
+<p>大家需要自己租一台具有公网IP的云服务器，并且配好Docker环境。
+可以参考<a
+target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/57/">《Linux基础课》——8.
+租云服务器及配docker环境</a>的讲义及视频讲解：</p>
+<p>讲义：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/3074146/">8.租云服务器及配docker环境</a></li>
+</ul>
+<p>视频讲解：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/3074937/">8.1
+租云服务器及配环境</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/3082792/">8.2
+docker教程</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/3089514/">8.3
+习题课</a></li>
+</ul>
+</blockquote>
+<h2 id="创建菜单界面">3.创建菜单界面</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="项目系统设计">项目系统设计</h4>
+<ul>
+<li><code>menu</code>:菜单界面</li>
+<li><code>playground</code>:游戏界面</li>
+<li><code>settings</code>:设置界面</li>
+</ul>
+<hr />
+<h4 id="项目文件结构">项目文件结构</h4>
+<ul>
+<li><code>templates</code>:目录：管理html文件</li>
+<li><code>urls</code>:目录：管理路由，即链接与函数的对应关系</li>
+<li><code>views</code>:目录：管理<code>http</code>函数</li>
+<li><code>models</code>:目录：管理数据库数据</li>
+<li><code>static</code>:目录：管理静态文件，比如：
+<ul>
+<li><code>css</code>:对象的格式，比如位置、长宽、颜色、背景、字体大小等</li>
+<li><code>js</code>:对象的逻辑，比如对象的创建与销毁、函数事件、移动、变色等</li>
+<li><code>image</code>:图片</li>
+<li><code>audio</code>:声音</li>
+<li>...</li>
+</ul></li>
+<li><code>consumers</code>:目录：管理<code>websocket</code>函数</li>
+</ul>
+<hr />
+<h4 id="本节课用到的素材地址">本节课用到的素材地址</h4>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://cdn.acwing.com/media/article/image/2023/03/17/1_067a3e9cc4-background.gif">背景图片</a>
+<ul>
+<li>下载方式：<code>wget --output-document=自定义图片名称 图片地址</code></li>
+</ul></li>
+<li><code>jquery</code>库：
+<ul>
+<li><code>&lt;link rel="stylesheet" href="https://cdn.acwing.com/static/jquery-ui-dist/jquery-ui.min.css"&gt;</code></li>
+<li><code>&lt;script src="https://cdn.acwing.com/static/jquery/js/jquery-3.3.1.min.js"&gt;&lt;/script&gt;</code></li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="部署nginx与对接acapp">5.部署nginx与对接acapp</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="增加容器的端口映射80和443">1.增加容器的端口映射：80和443</h4>
+<p>第一步，登录容器，关闭所有运行中的任务</p>
+<p>第二步，登录运行容器的服务器，然后执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker commit CONTAINER_NAME django_lesson:1.1 # 将容器保存为镜像，将CONTAINER_NAME替换成容器的名称<br>docker stop CONTAINER_NAME # 关闭容器<br>docker rm CONTAINER_NAME # 删除容器<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用保存下来的镜像重新创建容器</span><br>docker run -p 20000:22 -p 8000:8000 -p 80:80 -p 443:443 --name CONTAINER_NAME -itd django_lesson:1.1<br></code></pre></td></tr></table></figure>
+<p>第三步，去云服务器控制台，在安全组配置中开放80和443端口</p>
+<hr />
+<h4
+id="创建acapp获取域名nginx配置文件即https证书">2.创建AcApp，获取域名、nginx配置文件即https证书</h4>
+<p>打开<a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/whole/application/1/">AcWing</a>,打开“创建应用”的按钮</p>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/5.部署nginx与对接acapp/AcWing应用中心.png" srcset="/img/loading.gif" lazyload
+alt="AcWing应用中心" />
+<figcaption aria-hidden="true">AcWing应用中心</figcaption>
+</figure>
+<p>系统分配的域名，nginx配置文件即https证书在如下位置：</p>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/5.部署nginx与对接acapp/AcWing应用中心-创建应用.png" srcset="/img/loading.gif" lazyload
+alt="AcWing应用中心-创建应用" />
+<figcaption aria-hidden="true">AcWing应用中心-创建应用</figcaption>
+</figure>
+<p>在<code>服务器IP</code>一栏填写自己服务器的ip地址</p>
+<p>将<code>nginx.conf</code>中的内容写入服务器<code>/etc/nginx/nginx.conf</code>文件中。如果django项目路径与配置文件中不同，注意修改路径。</p>
+<p>将<code>acapp.key</code>中的内容写入服务器<code>/etc/nginx/cert/acapp.key</code>文件中</p>
+<p>将<code>acapp.pem</code>中的内容写入服务器<code>/etc/nginx/cert/acapp.pem</code>文件中</p>
+<p>然后启动nginx服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo /etc/init.d/nginx start<br></code></pre></td></tr></table></figure>
+<hr />
+<h4 id="修改django项目的配置">3.修改django项目的配置</h4>
+<ul>
+<li>打开<code>settings.py</code>文件：
+<ul>
+<li>将分配的域名添加到<code>ALLOWED_HOSTS</code>列表中。注意只需要添加<code>https://</code>后面的部分</li>
+<li>令<code>DEBUG = False</code>。</li>
+</ul></li>
+<li>归档<code>static</code>文件：
+<ul>
+<li><code>python3 manage.py collectstatic</code></li>
+</ul></li>
+</ul>
+<hr />
+<h4 id="配置uwsgi">4.配置uwsgi</h4>
+<ul>
+<li>在django项目中添加uwsgi的配置文件：<code>scripts/uwsgi.ini</code>，内容如下：</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[uwsgi]</span><br><span class="hljs-attr">socket</span>			= <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8000</span><br><span class="hljs-attr">chdir</span>			= /home/acs/acapp<br><span class="hljs-attr">wsgi-file</span>		= acapp/wsgi.py<br><span class="hljs-attr">master</span>			= <span class="hljs-literal">true</span><br><span class="hljs-attr">processes</span>		= <span class="hljs-number">2</span><br><span class="hljs-attr">threads</span>			= <span class="hljs-number">5</span><br><span class="hljs-attr">vacuum</span>			= <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<p>启动uwsgi服务：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">uwsgi --ini scripts/uwsgi.ini<br></code></pre></td></tr></table></figure>
+<hr />
+<h4 id="填写应用的剩余信息">5.填写应用的剩余信息</h4>
+<ul>
+<li>标题：应用的名称</li>
+<li>关键字：应用的标签（选填）</li>
+<li>css地址：css文件的地址，例如：<code>https://app76.acapp.acwing.com.cn/static/css/game.css</code></li>
+<li>js地址：js文件的地址：例如：<code>https://app76.acapp.acwing.com.cn/static/js/dist/game.js</code></li>
+<li>主类名：应用的main class，例如：<code>AcGame</code></li>
+<li>图标：4:3的图片</li>
+<li>应用介绍：介绍应用，支持markdown + latex语法</li>
+</ul>
+<hr />
+<h4 id="使分配的域名生效">6.使分配的域名生效</h4>
+<p>填写完服务器IP之后，点击“保存”或者“提交”按钮，均可以使分配的域名生效</p>
+<hr />
+<h4
+id="提交点打开应用按钮即可预览自己写的应用">7.提交点“打开应用”按钮，即可预览自己写的应用</h4>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/5.部署nginx与对接acapp/AcWing应用中心-查看自己的应用.png" srcset="/img/loading.gif" lazyload
+alt="AcWing应用中心-查看自己的应用" />
+<figcaption
+aria-hidden="true">AcWing应用中心-查看自己的应用</figcaption>
+</figure>
+<hr />
+<h4 id="发布应用">8.发布应用</h4>
+<p>等待项目调试之后，可以申请发布应用。审核通过后，你的acapp应用就可以跟大家见面啦！</p>
+</blockquote>
+<h2 id="创建账号系统">6.创建账号系统</h2>
+<h3 id="附录在django中集成redis">附录——在Django中集成Redis</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="安装django_redis">1.安装<code>django_redis</code></h4>
+<p><code>pip install django_redis</code></p>
+<h4 id="配置settings.py">2.配置<code>settings.py</code></h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">CACHES = &#123;<br> <span class="hljs-string">&#x27;default&#x27;</span>: &#123;<br>     <span class="hljs-string">&#x27;BACKEND&#x27;</span>: <span class="hljs-string">&#x27;django_redis.cache.RedisCache&#x27;</span>,<br>     <span class="hljs-string">&#x27;LOCATION&#x27;</span>: <span class="hljs-string">&#x27;redis://127.0.0.1:6379/1&#x27;</span>,<br>     <span class="hljs-string">&quot;OPTIONS&quot;</span>: &#123;<br>         <span class="hljs-string">&quot;CLIENT_CLASS&quot;</span>: <span class="hljs-string">&quot;django_redis.client.DefaultClient&quot;</span>,<br>     &#125;,<br> &#125;,<br>&#125;<br>USER_AGENTS_CACHE = <span class="hljs-string">&#x27;default&#x27;</span><br></code></pre></td></tr></table></figure>
+<h4 id="启动redis-server">3.启动<code>redis-server</code></h4>
+<p><code>sudo redis-server /etc/redis/redis.conf</code></p>
+</blockquote>
+<h3 id="用户名密码登录">6.1用户名密码登录</h3>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h3 id="本章用到的资源">本章用到的资源</h3>
+<h4 id="acwing-logo">1.AcWing Logo</h4>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/6.创建账号系统/acwing图片.png" srcset="/img/loading.gif" lazyload
+alt="acwing图片" />
+<figcaption aria-hidden="true">acwing图片</figcaption>
+</figure>
+<p><a
+target="_blank" rel="noopener" href="https://cdn.acwing.com/media/article/image/2021/11/18/1_ea3d5e7448-logo64x64_2.png">https://cdn.acwing.com/media/article/image/2021/11/18/1_ea3d5e7448-logo64x64_2.png</a></p>
+<hr />
+<h4 id="canvas用图片填充圆形">2.<code>canvas</code>用图片填充圆形</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Image</span>();<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span>.<span class="hljs-property">src</span> = <span class="hljs-string">&quot;图片地址&quot;</span>;<br><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">save</span>();<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">beginPath</span>();<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">arc</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span>, <span class="hljs-number">0</span>, <span class="hljs-title class_">Math</span>.<span class="hljs-property">PI</span> * <span class="hljs-number">2</span>, <span class="hljs-literal">false</span>);<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">stroke</span>();<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">clip</span>();<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">drawImage</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> * <span class="hljs-number">2</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> * <span class="hljs-number">2</span>); <br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">restore</span>();<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="web端acwing一键登录">6.2 web端AcWing一键登录</h3>
+<p>​ <strong>描述：</strong></p>
+<p>授权登录模式图：</p>
+<figure>
+<img src="D:\学习\Django框架课\6.创建账号系统\oauth2协议模式图.png" srcset="/img/loading.gif" lazyload
+alt="oauth2协议模式图" />
+<figcaption aria-hidden="true">oauth2协议模式图</figcaption>
+</figure>
+<p>​
+客户端点击一键登录发送apply_code请求（.ajax请求）到达web端，web端视图函数处理客户端请求重定向到acwing授权登录网址。用户点击授权向acwing端发送确认，acwing端收到确认即刻返回给web端授权码（code）和校验状态（state）<font color='red'>【此时需要注意：web端接收到acwing端传递过来的参数中包含state（state是Client端请求一键登录请求时一并携带的参数），因此web端可以验证当前的授权是否合法，如果不相同就会直接过滤当前的错误请求（恶意的攻击）】</font>。如果验证通过向acwing端请求access_token和openid，再次判断用户openid是否已经存在，如果已经存在则直接选择该用户登录（浏览器session中已经存在的缓存），无需重新在数据库创建该用户。如果不存在则持有access_token和openid向acwing请求用户信息userinfo于web端创建user和player并登录</p>
+<blockquote>
+<figure>
+<img src="D:\学习\Django框架课\6.创建账号系统\web端acwing一键登录.png" srcset="/img/loading.gif" lazyload
+alt="web端acwing一键登录" />
+<figcaption aria-hidden="true">web端acwing一键登录</figcaption>
+</figure>
+<h4 id="第一步-申请授权码code">第一步 申请授权码<code>code</code></h4>
+<p>请求地址：<code>https://www.acwing.com/third_party/api/oauth2/web/authorize/</code></p>
+<p>参考示例：</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pf">请求方法：GET<br>https://www.acwing.com/third_party/api/oauth2/web/authorize/?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;scope=SCOPE&amp;<span class="hljs-keyword">state</span>=STATE<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>appid</td>
+<td>是</td>
+<td>应用的唯一id，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="even">
+<td>redirect_uri</td>
+<td>是</td>
+<td>接收授权码的地址。需要用对链接进行编码：Python3中使用urllib.parse.quote；Java中使用URLEncoder.encode</td>
+</tr>
+<tr class="odd">
+<td>scope</td>
+<td>是</td>
+<td>申请授权的范围。目前只需填userinfo</td>
+</tr>
+<tr class="even">
+<td>state</td>
+<td>否</td>
+<td>用于判断请求和回调的一致性，授权成功后后原样返回。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数（如果是将第三方授权登录绑定到现有账号上，那么推荐用随机数
++ user_id作为state的值，可以有效防止CSRF攻击）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>用户同意授权后会重定向到<code>redirect_uri</code>，返回参数<code>code</code>和<code>state</code>。链接格式如下：</p>
+<p><code>redirect_uri?code=CODE&amp;state=STATE</code></p>
+<p>如果用户拒绝授权，则不会发生重定向</p>
+<hr />
+<h4 id="第二步-申请授权令牌access_token和用户的openid">第二步
+申请授权令牌<code>access_token</code>和用户的<code>openid</code></h4>
+<p>请求地址：<code>https://www.acwing.com/third_party/api/oauth2/access_token/</code></p>
+<p>参考示例：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">请求方法：GET<br>https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/oauth2/</span>access_token/?appid=APPID&amp;secret=APPSECRET&amp;code=CODE<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>appid</td>
+<td>是</td>
+<td>应用的唯一id，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="even">
+<td>secret</td>
+<td>是</td>
+<td>应用的秘钥，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="odd">
+<td>code</td>
+<td>是</td>
+<td>第一步中获取的授权码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>申请成功示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span> <br> <span class="hljs-attr">&quot;access_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span><span class="hljs-punctuation">,</span> <br> <span class="hljs-attr">&quot;expires_in&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">7200</span><span class="hljs-punctuation">,</span> <br> <span class="hljs-attr">&quot;refresh_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;REFRESH_TOKEN&quot;</span><span class="hljs-punctuation">,</span><br> <span class="hljs-attr">&quot;openid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;OPENID&quot;</span><span class="hljs-punctuation">,</span> <br> <span class="hljs-attr">&quot;scope&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SCOPE&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>申请失败示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br> <span class="hljs-attr">&quot;errcode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">40001</span><span class="hljs-punctuation">,</span><br> <span class="hljs-attr">&quot;errmsg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;code expired&quot;</span><span class="hljs-punctuation">,</span>  # 授权码过期<br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p><strong>返回参数说明</strong></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>access_token</td>
+<td>授权令牌，有效期2小时</td>
+</tr>
+<tr class="even">
+<td>expires_in</td>
+<td>授权令牌还有多久过期，单位（秒）</td>
+</tr>
+<tr class="odd">
+<td>refresh_token</td>
+<td>用于刷新access_token的令牌，有效期30天</td>
+</tr>
+<tr class="even">
+<td>openid</td>
+<td>用户的id。每个AcWing用户在每个acapp中授权的openid是唯一的,可用于识别用户。</td>
+</tr>
+<tr class="odd">
+<td>scope</td>
+<td>用户授权的范围。目前范围为userinfo，包括用户名、头像</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>刷新access_token的有效期</strong></p>
+<p><code>access_token</code>的有效期为2小时，时间较短。<code>refresh_token</code>的有效期在30天，可用于刷新<code>access_token</code>。刷新结果有两种：</p>
+<ol type="1">
+<li>如果<code>access_token</code>已过期，则生成一个新的<code>access_token</code>。</li>
+<li>如果<code>access_token</code>未过期，则将当前的<code>access_token</code>的有效期延长为2小时</li>
+</ol>
+<p>参考示例：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">请求方法：GET<br>https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/oauth2/</span>refresh_token/?appid=APPID&amp;refresh_token=REFRESH_TOKEN<br></code></pre></td></tr></table></figure>
+<p>返回结果的格式与申请<code>access_token</code>相同</p>
+<hr />
+<h4 id="第三步-申请用户信息">第三步 申请用户信息</h4>
+<p>请求地址:<code>https://www.acwing.com/third_party/api/meta/identity/getinfo/</code></p>
+<p>参考示例:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/meta/i</span>dentity<span class="hljs-regexp">/getinfo/</span>?access_token=ACCESS_TOKEN&amp;openid=OPENID<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>access_token</td>
+<td>是</td>
+<td>第二步中获取的授权令牌</td>
+</tr>
+<tr class="even">
+<td>openid</td>
+<td>是</td>
+<td>第二步中获取的用户openid</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>申请成功示例:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br> &#x27;username&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;USERNAME&quot;</span><span class="hljs-punctuation">,</span><br> &#x27;photo&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https:cdn.acwing.com/xxxxx&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>申请失败示例:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br> &#x27;errcode&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;40004&quot;</span><span class="hljs-punctuation">,</span><br> &#x27;errmsg&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;access_token expired&quot;</span>  # 授权令牌过期<br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="acapp端acwing一键登录">6.3 acapp端acwing一键登录</h3>
+<p>​ <strong>描述:</strong></p>
+<blockquote>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/6.创建账号系统/acapp端acwing一键登录.png" srcset="/img/loading.gif" lazyload
+alt="acapp端acwing一键登录" />
+<figcaption aria-hidden="true">acapp端acwing一键登录</figcaption>
+</figure>
+<h4 id="第一步-申请授权码code-1">第一步 申请授权码<code>code</code></h4>
+<p>请求授权码的API:</p>
+<p><code>AcWingOS.api.oauth2.authorize(appid, redirect_uri, scope, state, callback);</code></p>
+<p><strong>参数说明</strong></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>appid</td>
+<td>是</td>
+<td>应用的唯一id，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="even">
+<td>redirect_uri</td>
+<td>是</td>
+<td>接收授权码的地址。需要用对链接进行编码：Python3中使用urllib.parse.quote；Java中使用URLEncoder.encode</td>
+</tr>
+<tr class="odd">
+<td>scope</td>
+<td>是</td>
+<td>申请授权的范围。目前只需填userinfo</td>
+</tr>
+<tr class="even">
+<td>state</td>
+<td>是</td>
+<td>用于判断请求和回调的一致性，授权成功后后原样返回。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数（如果是将第三方授权登录绑定到现有账号上，那么推荐用随机数
++ user_id作为state的值，可以有效防止CSRF攻击）</td>
+</tr>
+<tr class="odd">
+<td>callback</td>
+<td>是</td>
+<td>redirect_uri返回后的回调函数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>用户同意授权后,会将<code>code</code>和<code>state</code>传递给<code>redirect_uri</code>。</p>
+<p>如果用户拒绝授权，则将会收到如下错误码：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>	errcode<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;40010&quot;</span><br>	errmsg<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;user reject&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<hr />
+<h4
+id="第二步-申请授权令牌access_token和用户的openid-1">第二步　申请授权令牌<code>access_token</code>和用户的<code>openid</code></h4>
+<p>请求地址：<code>https://www.acwing.com/third_party/api/oauth2/access_token/</code></p>
+<p>参考示例：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">请求方法：GET<br>https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/oauth2/</span>access_token/?appid=APPID&amp;secret=APPSECRET&amp;code=CODE<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>appid</td>
+<td>是</td>
+<td>应用的唯一id，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="even">
+<td>secret</td>
+<td>是</td>
+<td>应用的秘钥，可以在AcWing编辑AcApp的界面里看到</td>
+</tr>
+<tr class="odd">
+<td>code</td>
+<td>是</td>
+<td>第一步中获取的授权码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>申请成功示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span> <br><span class="hljs-attr">&quot;access_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span><span class="hljs-punctuation">,</span> <br><span class="hljs-attr">&quot;expires_in&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">7200</span><span class="hljs-punctuation">,</span> <br> <span class="hljs-attr">&quot;refresh_token&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;REFRESH_TOKEN&quot;</span><span class="hljs-punctuation">,</span><br> <span class="hljs-attr">&quot;openid&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;OPENID&quot;</span><span class="hljs-punctuation">,</span> <br> <span class="hljs-attr">&quot;scope&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SCOPE&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>申请失败示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br><span class="hljs-attr">&quot;errcode&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">40001</span><span class="hljs-punctuation">,</span><br><span class="hljs-attr">&quot;errmsg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;code expired&quot;</span><span class="hljs-punctuation">,</span>  # 授权码过期<br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p><strong>返回参数说明</strong></p>
+<table>
+
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>access_token</td>
+<td>授权令牌，有效期2小时</td>
+</tr>
+<tr class="even">
+<td>expires_in</td>
+<td>授权令牌还有多久过期，单位（秒）</td>
+</tr>
+<tr class="odd">
+<td>refresh_token</td>
+<td>用于刷新access_token的令牌，有效期30天</td>
+</tr>
+<tr class="even">
+<td>openid</td>
+<td>用户的id。每个acwing用户在每个acapp中授权的openid是唯一的，可用于识别用户。</td>
+</tr>
+<tr class="odd">
+<td>scope</td>
+<td>用户授权的范围。目前范围为userinfo，包括用户名、头像</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>刷新access_token的有效期</strong></p>
+<p><code>access_token</code>的有效期是2小时，时间较短。<code>refresh_token</code>的有效期是30天，可用于刷新<code>access_token</code>。刷新结果有两种：</p>
+<ol type="1">
+<li>如果<code>access_token</code>已过期，则生成一个新的<code>access_token</code>。</li>
+<li>如果<code>access_token</code>未过期，则将当前的<code>access_token</code>的有效期延长为2小时</li>
+</ol>
+<p>参考示例：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">请求方法：GET<br>https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/oauth2/</span>refresh_token/?appid=APPID&amp;refresh_token=REFRESH_TOKEN<br></code></pre></td></tr></table></figure>
+<p>返回结果的格式与申请<code>access_token</code>相同。</p>
+<hr />
+<h4 id="第三步-申请用户信息-1">第三步 申请用户信息</h4>
+<p>请求地址：<code>https://www.acwing.com/third_party/api/meta/identity/getinfo/</code></p>
+<p>参考示例：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">请求方法：GET<br>https:<span class="hljs-regexp">//</span>www.acwing.com<span class="hljs-regexp">/third_party/</span>api<span class="hljs-regexp">/meta/i</span>dentity<span class="hljs-regexp">/getinfo/</span>?access_token=ACCESS_TOKEN&amp;openid=OPENID<br></code></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>access_token</td>
+<td>是</td>
+<td>第二步中获取的授权令牌</td>
+</tr>
+<tr class="even">
+<td>openid</td>
+<td>是</td>
+<td>第二步中获取的用户openid</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回说明</strong></p>
+<p>申请成功示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    &#x27;username&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;USERNAME&quot;</span><span class="hljs-punctuation">,</span><br>    &#x27;photo&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https:cdn.acwing.com/xxxxx&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<p>申请失败示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>    &#x27;errcode&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;40004&quot;</span><span class="hljs-punctuation">,</span><br>    &#x27;errmsg&#x27;<span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;access_token expired&quot;</span>  # 授权令牌过期<br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="实现联机对战">7.实现联机对战</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="统一长度单位">1.统一长度单位</h4>
+<p>​
+不同的玩家打开游戏，游戏界面的长宽比应该是一样的才是，要不然一个玩家在的游戏界面在其他玩家的界面里是出界显示的</p>
+<h4 id="增加联机对战模式">2.增加”联机对战“模式</h4>
+<p>​ 将settings中的menu的zbase.js的多人模式按钮添加点击事件监听</p>
+<h4 id="配置channels_redis">3.配置channels_redis</h4>
+<h5 id="安装channels_redis">1.安装<code>channels_redis</code>:</h5>
+<p><code>pip install channels_redis</code></p>
+<hr />
+<h5 id="配置acappasgi.py">2.配置<code>acapp/asgi.py</code>:</h5>
+<p>内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br><span class="hljs-keyword">from</span> channels.auth <span class="hljs-keyword">import</span> AuthMiddlewareStack<br><span class="hljs-keyword">from</span> channels.routing <span class="hljs-keyword">import</span> ProtocolTypeRouter, URLRouter<br><span class="hljs-keyword">from</span> django.core.asgi <span class="hljs-keyword">import</span> get_asgi_application<br><span class="hljs-keyword">from</span> game.routing <span class="hljs-keyword">import</span> websocket_urlpatterns<br><br>os.environ.setdefault(<span class="hljs-string">&#x27;DJANGO_SETTINGS_MODULE&#x27;</span>, <span class="hljs-string">&#x27;acapp.settings&#x27;</span>)<br><br>application = ProtocolTypeRouter(&#123;<br><span class="hljs-string">&quot;http&quot;</span>: get_asgi_application(),<br><span class="hljs-string">&quot;websocket&quot;</span>: AuthMiddlewareStack(URLRouter(websocket_urlpatterns))<br>&#125;)<br></code></pre></td></tr></table></figure>
+<hr />
+<h5 id="配置acappsettings.py">3.配置<code>acapp/settings.py</code>:</h5>
+<p>在<code>INSTALLED_APPS</code>中添加<code>channels</code>，然后添加如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">INSTALLED_APPS = [ <br><span class="hljs-string">&#x27;channels&#x27;</span>,<br><span class="hljs-string">&#x27;game.apps.GameConfig&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.admin&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.auth&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.contenttypes&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.sessions&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.messages&#x27;</span>,<br><span class="hljs-string">&#x27;django.contrib.staticfiles&#x27;</span>,<br>]<br></code></pre></td></tr></table></figure>
+<p>然后再文件末尾添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">ASGI_APPLICATION = <span class="hljs-string">&#x27;acapp.asgi.application&#x27;</span><br>CHANNEL_LAYERS = &#123;<br><span class="hljs-string">&quot;default&quot;</span>: &#123;<br><span class="hljs-string">&quot;BACKEND&quot;</span>: <span class="hljs-string">&quot;channels_redis.core.RedisChannelLayer&quot;</span>,<br><span class="hljs-string">&quot;CONFIG&quot;</span>: &#123;<br>   <span class="hljs-string">&quot;hosts&quot;</span>: [(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">6379</span>)],<br>&#125;,<br>&#125;,<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<h5 id="配置gamerouting.py">4.配置<code>game/routing.py</code>:</h5>
+<p>这一部分的作用相当于<code>http</code>的<code>urls</code>。</p>
+<p>内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path<br><br>websocket_urlpatterns = [<br>]<br><br></code></pre></td></tr></table></figure>
+<hr />
+<h5 id="编写gameconsumers">5.编写<code>game/consumers</code>:</h5>
+<p>这一部分的作用相当于<code>http</code>的<code>views</code>。</p>
+<p>参考示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> channels.generic.websocket <span class="hljs-keyword">import</span> AsyncWebsocketConsumer<br><span class="hljs-keyword">import</span> json<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MultiPlayer</span>(<span class="hljs-title class_ inherited__">AsyncWebsocketConsumer</span>):<br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">connect</span>(<span class="hljs-params">self</span>):<br><span class="hljs-keyword">await</span> self.accept()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;accept&#x27;</span>)<br><br>self.room_name = <span class="hljs-string">&quot;room&quot;</span><br><span class="hljs-keyword">await</span> self.channel_layer.group_add(self.room_name, self.channel_name)<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">disconnect</span>(<span class="hljs-params">self, close_code</span>):<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;disconnect&#x27;</span>)<br><span class="hljs-keyword">await</span> self.channel_layer.group_discard(self.room_name, self.channel_name)<br><br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">receive</span>(<span class="hljs-params">self, text_data</span>):<br>data = json.loads(text_data)<br><span class="hljs-built_in">print</span>(data)<br></code></pre></td></tr></table></figure>
+<hr />
+<h5 id="启动django_channels">6.启动<code>django_channels</code></h5>
+<p>在<code>~/acapp</code>目录下执行:</p>
+<p><code>daphne -b 0.0.0.0 -p 5015 acapp.asgi:application</code></p>
+<h4 id="编写同步函数">4.编写同步函数</h4>
+<h5 id="canvas渲染文本"><code>canvas</code>渲染文本</h5>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">font</span> = <span class="hljs-string">&quot;20px serif&quot;</span>;<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">fillStyle</span> = <span class="hljs-string">&quot;white&quot;</span>;<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">textAlign</span> = <span class="hljs-string">&quot;center&quot;</span>;<br><span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-title function_">fillText</span>(<span class="hljs-string">&quot;Hello HelloWorld&quot;</span>, x, y);<br></code></pre></td></tr></table></figure>
+<hr />
+<h5 id="技能图标资源">技能图标资源</h5>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/技能1.png" srcset="/img/loading.gif" lazyload
+alt="技能1" />
+<figcaption aria-hidden="true">技能1</figcaption>
+</figure>
+<figure>
+<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/技能2.png" srcset="/img/loading.gif" lazyload
+alt="技能2" />
+<figcaption aria-hidden="true">技能2</figcaption>
+</figure>
+<h4
+id="尝试解释一下创建玩家这一个事件的整个流程">尝试解释一下创建玩家这一个事件的整个流程：</h4>
+<ol type="1">
+<li>首先前端js接收到菜单界面事件点击，wss服务器尝试创建连接，连接创建成功后会自动调用回调函数<code>outer.mps.send_create_player</code>传递创建当前用户信息。<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-1.png" srcset="/img/loading.gif" lazyload
+alt="create_player-1" /></li>
+<li>事件进入到<code>Multiplayer</code>类中处理，类<code>Multiplayer</code>中的<code>send_create_player</code>函数将前端传入的me用户信息（<code>json</code>序列）参数转换成string通过ws连接对象发送到后端处理函数<code>receive</code>统一接收函数中<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-2.png" srcset="/img/loading.gif" lazyload
+alt="create_player-2" /></li>
+<li>后端<code>receive</code>函数接收到事件做路由分配之后携带<code>string</code>传递到后端相应的处理函数<code>create_player</code>中。<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-3.png" srcset="/img/loading.gif" lazyload
+alt="create_player-3" /></li>
+<li><code>create_player</code>函数先从<code>cache</code>中找寻空房间并确定空的房间准备加入中，然后将该房间中的已经存在的玩家在本机窗口中创建（遍历<code>redis</code>中的玩家信息依次发送给前端创建玩家的请求）<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-4.png" srcset="/img/loading.gif" lazyload
+alt="create_player-4" /></li>
+<li>前端也有一个接收消息的函数作为回应后端的请求，当前端接收到后端发送的创建玩家请求之后经过路由过滤调用创建玩家的函数<code>receive_create_player()</code><img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-5.png" srcset="/img/loading.gif" lazyload
+alt="create_player-5" /></li>
+<li>最后<code>receive_create_player</code>函数真实的在前端创建出来一个玩家，并且本机窗口创建的enemy玩家不受本机点触事件的控制所以应该将该玩家的uuid统一为控制方生成的<code>uuid</code>保证事件的同步运行<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-6.png" srcset="/img/loading.gif" lazyload
+alt="create_player-6" /></li>
+<li>(接上 ——
+4.)但此时所有事件后端函数还没有执行完成，当同一个<code>room</code>中的玩家都在本地已经渲染完了之后需要将本机生成的玩家创建出来，加入到当前的<code>room</code>中，创建me玩家时是通过群发的方式创建的玩家，群发函数能够接收函数<code>group_send_event</code>收到并执行<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-7.png" srcset="/img/loading.gif" lazyload
+alt="create_player-7" /></li>
+<li>接收函数<code>group_send_event</code>接收到群发消息后在统一<code>room</code>中的所有窗口中创建me玩家<img
+src="/img/learning/acwing/django_framework_course/7.实现联机对战/create_player-8.png" srcset="/img/loading.gif" lazyload
+alt="create_player-8" /></li>
+<li>最后同一个<code>room</code>中的所有玩家在各自的窗口中就能够同步显示<code>create_player</code>的效果了</li>
+</ol>
+</blockquote>
+<h2 id="实现匹配系统">9.实现匹配系统</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<h4 id="thrift服务">thrift服务</h4>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://thrift.apache.org/">thrift官网</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://git.acwing.com/yxc/thrift_lesson">Linux基础课-thrift项目地址</a></li>
+</ol>
+<hr />
+<h4 id="项目收尾">项目收尾</h4>
+<p><strong>1.加密、压缩js代码</strong></p>
+<p>安装<code>tester</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install npm<br>sudo npm install terser -g<br></code></pre></td></tr></table></figure>
+<p><code>terser</code>不仅支持文件输入，也支持标准输入。结果会输出到标准输出中</p>
+<p>使用方式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">terser xxx.js -c -m<br></code></pre></td></tr></table></figure>
+<hr />
+<p><strong>2.清理监听函数</strong></p>
+<p>在ACAPP关闭之前触发的事件可以通过如下api添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">AcWingOS.api.window.on_close(func);<br></code></pre></td></tr></table></figure>
+<h4 id="注意">注意：</h4>
+<ul>
+<li>在同一个页面中，多个acapp引入的js代码只会加载一次，因此<code>AC_GAME_OBJECTS</code>等全局变量是同一个页面、同一个<code>acapp</code>的所有窗口公用的。</li>
+<li>各自创建的局部变量是独立的，比如<code>new AcGame()</code>创建出的对象各个窗口是独立的。</li>
+</ul>
+<hr />
+<p><strong>3.编写每局游戏的结束界面</strong></p>
+<p>资源地址：</p>
+<ol type="1">
+<li><a
+target="_blank" rel="noopener" href="https://cdn.acwing.com/media/article/image/2021/12/17/1_8f58341a5e-win.png">获胜图标</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://cdn.acwing.com/media/article/image/2021/12/17/1_9254b5f95e-lose.png">失败图标</a></li>
+</ol>
+<hr />
+<p><strong>4.更新战绩</strong></p>
+<p><strong>5.添加favicon.ico</strong></p>
+<p>资源地址：</p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://cdn.acwing.com/media/article/image/2021/12/17/1_be4c11ce5f-acapp.png">acapp.png</a></li>
+</ul>
+</blockquote>
+<h2 id="rest-framework与jwt身份验证">10.Rest Framework与JWT身份验证</h2>
+<p>​ <strong>描述：</strong></p>
+<blockquote>
+<p>为了方便解决跨域身份验证问题，本章我们在之前的项目中集成 Django Rest
+Framework 和 JWT 身份验证。</p>
+<h4 id="继承django-rest-framework">1.继承Django Rest Framework</h4>
+<p><strong>1.1安装</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">pip install djangorestframework<br>pip install pyjwt<br></code></pre></td></tr></table></figure>
+<p>然后在<code>settings.py</code>的<code>INSTALLED_APPS</code>中添加<code>rest_framework</code>。</p>
+<hr />
+<p><strong>1.2Class-Based Views</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> rest_framework.views <span class="hljs-keyword">import</span> APIView<br><span class="hljs-keyword">from</span> rest_framework.response <span class="hljs-keyword">import</span> Response<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">SnippetDetail</span>(<span class="hljs-title class_ inherited__">APIView</span>):<br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">get</span>(<span class="hljs-params">self, request</span>):  <span class="hljs-comment"># 查找</span><br>     ...<br>     <span class="hljs-keyword">return</span> Response(...)<br><br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">post</span>(<span class="hljs-params">self, request</span>):  <span class="hljs-comment"># 创建</span><br>     ...<br>     <span class="hljs-keyword">return</span> Response(...)<br><br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">put</span>(<span class="hljs-params">self, request, pk</span>):  <span class="hljs-comment"># 修改</span><br>     ...<br>     <span class="hljs-keyword">return</span> Response(...)<br><br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">delete</span>(<span class="hljs-params">self, request, pk</span>):  <span class="hljs-comment"># 删除</span><br>     ...<br>     <span class="hljs-keyword">return</span> Response(...)<br><br></code></pre></td></tr></table></figure>
+<h4 id="集成jwt验证">2.集成JWT验证</h4>
+<p><strong>2.1安装</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> djangorestframework-simplejwt<br></code></pre></td></tr></table></figure>
+<p>然后在<code>settings.py</code>中添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">INSTALLED_APPS = [<br> ...<br> <span class="hljs-string">&#x27;rest_framework_simplejwt&#x27;</span>,<br> ...<br>]<br><br>REST_FRAMEWORK = &#123;<br> ...<br> <span class="hljs-string">&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;</span>: (<br>     ...<br>     <span class="hljs-string">&#x27;rest_framework_simplejwt.authentication.JWTAuthentication&#x27;</span>,<br> )<br> ...<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<p><strong>2.2配置</strong></p>
+<p>在<code>settings.py</code>中添加：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> timedelta<br>...<br><br>SIMPLE_JWT = &#123;<br> <span class="hljs-string">&#x27;ACCESS_TOKEN_LIFETIME&#x27;</span>: timedelta(minutes=<span class="hljs-number">5</span>),<br> <span class="hljs-string">&#x27;REFRESH_TOKEN_LIFETIME&#x27;</span>: timedelta(days=<span class="hljs-number">1</span>),<br> <span class="hljs-string">&#x27;ROTATE_REFRESH_TOKENS&#x27;</span>: <span class="hljs-literal">False</span>,<br> <span class="hljs-string">&#x27;BLACKLIST_AFTER_ROTATION&#x27;</span>: <span class="hljs-literal">False</span>,<br> <span class="hljs-string">&#x27;UPDATE_LAST_LOGIN&#x27;</span>: <span class="hljs-literal">False</span>,<br><br> <span class="hljs-string">&#x27;ALGORITHM&#x27;</span>: <span class="hljs-string">&#x27;HS256&#x27;</span>,<br> <span class="hljs-string">&#x27;SIGNING_KEY&#x27;</span>: SECRET_KEY,<br> <span class="hljs-string">&#x27;VERIFYING_KEY&#x27;</span>: <span class="hljs-literal">None</span>,<br> <span class="hljs-string">&#x27;AUDIENCE&#x27;</span>: <span class="hljs-literal">None</span>,<br> <span class="hljs-string">&#x27;ISSUER&#x27;</span>: <span class="hljs-literal">None</span>,<br> <span class="hljs-string">&#x27;JWK_URL&#x27;</span>: <span class="hljs-literal">None</span>,<br> <span class="hljs-string">&#x27;LEEWAY&#x27;</span>: <span class="hljs-number">0</span>,<br><br> <span class="hljs-string">&#x27;AUTH_HEADER_TYPES&#x27;</span>: (<span class="hljs-string">&#x27;Bearer&#x27;</span>,),<br> <span class="hljs-string">&#x27;AUTH_HEADER_NAME&#x27;</span>: <span class="hljs-string">&#x27;HTTP_AUTHORIZATION&#x27;</span>,<br> <span class="hljs-string">&#x27;USER_ID_FIELD&#x27;</span>: <span class="hljs-string">&#x27;id&#x27;</span>,<br> <span class="hljs-string">&#x27;USER_ID_CLAIM&#x27;</span>: <span class="hljs-string">&#x27;user_id&#x27;</span>,<br> <span class="hljs-string">&#x27;USER_AUTHENTICATION_RULE&#x27;</span>: <span class="hljs-string">&#x27;rest_framework_simplejwt.authentication.default_user_authentication_rule&#x27;</span>,<br><br> <span class="hljs-string">&#x27;AUTH_TOKEN_CLASSES&#x27;</span>: (<span class="hljs-string">&#x27;rest_framework_simplejwt.tokens.AccessToken&#x27;</span>,),<br> <span class="hljs-string">&#x27;TOKEN_TYPE_CLAIM&#x27;</span>: <span class="hljs-string">&#x27;token_type&#x27;</span>,<br> <span class="hljs-string">&#x27;TOKEN_USER_CLASS&#x27;</span>: <span class="hljs-string">&#x27;rest_framework_simplejwt.models.TokenUser&#x27;</span>,<br><br> <span class="hljs-string">&#x27;JTI_CLAIM&#x27;</span>: <span class="hljs-string">&#x27;jti&#x27;</span>,<br><br> <span class="hljs-string">&#x27;SLIDING_TOKEN_REFRESH_EXP_CLAIM&#x27;</span>: <span class="hljs-string">&#x27;refresh_exp&#x27;</span>,<br> <span class="hljs-string">&#x27;SLIDING_TOKEN_LIFETIME&#x27;</span>: timedelta(minutes=<span class="hljs-number">5</span>),<br> <span class="hljs-string">&#x27;SLIDING_TOKEN_REFRESH_LIFETIME&#x27;</span>: timedelta(days=<span class="hljs-number">1</span>),<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<hr />
+<p><strong>2.3添加获取jwt和刷新jwt路由</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> rest_framework_simplejwt.views <span class="hljs-keyword">import</span> (<br> TokenObtainPairView,<br> TokenRefreshView,<br>)<br><br>urlpatterns = [<br> ...<br> path(<span class="hljs-string">&#x27;api/token/&#x27;</span>, TokenObtainPairView.as_view(), name=<span class="hljs-string">&#x27;token_obtain_pair&#x27;</span>),<br> path(<span class="hljs-string">&#x27;api/token/refresh/&#x27;</span>, TokenRefreshView.as_view(), name=<span class="hljs-string">&#x27;token_refresh&#x27;</span>),<br> ...<br>]<br><br></code></pre></td></tr></table></figure>
+<hr />
+<p><strong>2.4手动获取jwt</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> rest_framework_simplejwt.tokens <span class="hljs-keyword">import</span> RefreshToken<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_tokens_for_user</span>(<span class="hljs-params">user</span>):<br> refresh = RefreshToken.for_user(user)<br><br> <span class="hljs-keyword">return</span> &#123;<br>     <span class="hljs-string">&#x27;refresh&#x27;</span>: <span class="hljs-built_in">str</span>(refresh),<br>     <span class="hljs-string">&#x27;access&#x27;</span>: <span class="hljs-built_in">str</span>(refresh.access_token),<br> &#125;<br></code></pre></td></tr></table></figure>
+<hr />
+<p><strong>2.5将jwt验证集成到Django Channel中</strong></p>
+<p>创建文件<code>channelsmiddleware.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;General web socket middlewares</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><br><span class="hljs-keyword">from</span> channels.db <span class="hljs-keyword">import</span> database_sync_to_async<br><span class="hljs-keyword">from</span> django.contrib.auth <span class="hljs-keyword">import</span> get_user_model<br><span class="hljs-keyword">from</span> django.contrib.auth.models <span class="hljs-keyword">import</span> AnonymousUser<br><span class="hljs-keyword">from</span> rest_framework_simplejwt.exceptions <span class="hljs-keyword">import</span> InvalidToken, TokenError<br><span class="hljs-keyword">from</span> rest_framework_simplejwt.tokens <span class="hljs-keyword">import</span> UntypedToken<br><span class="hljs-keyword">from</span> rest_framework_simplejwt.authentication <span class="hljs-keyword">import</span> JWTTokenUserAuthentication<br><span class="hljs-keyword">from</span> channels.middleware <span class="hljs-keyword">import</span> BaseMiddleware<br><span class="hljs-keyword">from</span> channels.auth <span class="hljs-keyword">import</span> AuthMiddlewareStack<br><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> close_old_connections<br><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> parse_qs<br><span class="hljs-keyword">from</span> jwt <span class="hljs-keyword">import</span> decode <span class="hljs-keyword">as</span> jwt_decode<br><span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings<br><span class="hljs-meta">@database_sync_to_async</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_user</span>(<span class="hljs-params">validated_token</span>):<br> <span class="hljs-keyword">try</span>:<br>     user = get_user_model().objects.get(<span class="hljs-built_in">id</span>=validated_token[<span class="hljs-string">&quot;user_id&quot;</span>])<br>     <span class="hljs-comment"># return get_user_model().objects.get(id=toke_id)</span><br>     <span class="hljs-keyword">return</span> user<br><br> <span class="hljs-keyword">except</span>:<br>     <span class="hljs-keyword">return</span> AnonymousUser()<br><br><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">JwtAuthMiddleware</span>(<span class="hljs-title class_ inherited__">BaseMiddleware</span>):<br> <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, inner</span>):<br>     self.inner = inner<br><br> <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">__call__</span>(<span class="hljs-params">self, scope, receive, send</span>):<br>    <span class="hljs-comment"># Close old database connections to prevent usage of timed out connections</span><br>     close_old_connections()<br><br>     <span class="hljs-comment"># Try to authenticate the user</span><br>     <span class="hljs-keyword">try</span>:<br>         <span class="hljs-comment"># Get the token</span><br>         token = parse_qs(scope[<span class="hljs-string">&quot;query_string&quot;</span>].decode(<span class="hljs-string">&quot;utf8&quot;</span>))[<span class="hljs-string">&quot;token&quot;</span>][<span class="hljs-number">0</span>]<br><br>         <span class="hljs-comment"># This will automatically validate the token and raise an error if token is invalid</span><br>         UntypedToken(token)<br>     <span class="hljs-keyword">except</span>:<br>         <span class="hljs-comment"># Token is invalid</span><br><br>         scope[<span class="hljs-string">&quot;user&quot;</span>] = AnonymousUser()<br>     <span class="hljs-keyword">else</span>:<br>         <span class="hljs-comment">#  Then token is valid, decode it</span><br>         decoded_data = jwt_decode(token, settings.SIMPLE_JWT[<span class="hljs-string">&quot;SIGNING_KEY&quot;</span>], algorithms=[<span class="hljs-string">&quot;HS256&quot;</span>])<br><br>         <span class="hljs-comment"># Get the user using ID</span><br>         scope[<span class="hljs-string">&quot;user&quot;</span>] = <span class="hljs-keyword">await</span> get_user(validated_token=decoded_data)<br>     <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-built_in">super</span>().__call__(scope, receive, send)<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">JwtAuthMiddlewareStack</span>(<span class="hljs-params">inner</span>):<br> <span class="hljs-keyword">return</span> JwtAuthMiddleware(AuthMiddlewareStack(inner))<br><br></code></pre></td></tr></table></figure>
+<h4 id="配置nginx">3.配置Nginx</h4>
+<p>打开<code>/etc/nginx/nginx.conf</code>，在<code>location /</code>的路由中添加对<code>PUT</code>、<code>POST</code>、<code>DELETE</code>方法的支持。完整配置见【创建应用】界面。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">if</span> (<span class="hljs-variable">$request_method</span> = <span class="hljs-string">&#x27;POST&#x27;</span>) &#123;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Origin&#x27;</span> <span class="hljs-string">&#x27;https://www.acwing.com&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Methods&#x27;</span> <span class="hljs-string">&#x27;GET, PUT, OPTIONS, POST, DELETE&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Headers&#x27;</span> <span class="hljs-string">&#x27;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Amz-Date&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Expose-Headers&#x27;</span> <span class="hljs-string">&#x27;Content-Length,Content-Range&#x27;</span>;<br>&#125;<br><span class="hljs-attribute">if</span> (<span class="hljs-variable">$request_method</span> = <span class="hljs-string">&#x27;DELETE&#x27;</span>) &#123;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Origin&#x27;</span> <span class="hljs-string">&#x27;https://www.acwing.com&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Methods&#x27;</span> <span class="hljs-string">&#x27;GET, PUT, OPTIONS, POST, DELETE&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Allow-Headers&#x27;</span> <span class="hljs-string">&#x27;DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Amz-Date&#x27;</span>;<br> <span class="hljs-attribute">add_header</span> <span class="hljs-string">&#x27;Access-Control-Expose-Headers&#x27;</span> <span class="hljs-string">&#x27;Content-Length,Content-Range&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>创建完成后，执行：<code>sudo nginx -s reload</code>，使修改生效。</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/acwing/" class="category-chain-item">acwing</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/acwing/%E5%B7%A5%E7%A8%8B/" class="category-chain-item">工程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/acwing/" class="print-no-link">#acwing</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0/" class="print-no-link">#学习</a>
+      
+        <a href="/tags/%E5%B7%A5%E7%A8%8B/" class="print-no-link">#工程</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>acwing_django框架课</div>
+      <div>https://example.com/2023/09/15/acwing_django框架课/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Andy</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/11/26/%E8%A1%A511%E6%9C%8824%E6%97%A5%E5%B0%8F%E8%AE%B0%E4%B8%80%E7%AF%87/" title="补11月24日小记一篇">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">补11月24日小记一篇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/08/acwing_linux%E5%9F%BA%E7%A1%80/" title="acwing_linux基础">
+                        <span class="hidden-mobile">acwing_linux基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
